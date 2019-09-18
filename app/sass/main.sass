@@ -1,0 +1,588 @@
+@import vars
+@import fonts
+@import libs
+
+::placeholder
+	color: #666
+
+::selection
+	background-color: $accent
+	color: #fff
+
+input, textarea
+	outline: none
+	&:focus:required:invalid
+		border-color: red
+	&:required:valid
+		border-color: green
+
+body
+	font-size: 16px
+	min-width: 320px
+	position: relative
+	line-height: 1.65
+	font-family: $default-font
+	overflow-x: hidden
+	color: $text
+	background-color: #FBFBFB
+
+h1,h2,h3,h4,h5,h6,
+.h1,.h2,.h3,.h4,.h5,.h6
+	margin-top: 0
+	margin-bottom: .5rem
+	font-family: $heading-font
+	font-weight: bold
+	line-height: 1.2
+
+h1,.h1
+	font-size: 3.125em
+	font-weight: 800
+	text-transform: uppercase
+
+h2,.h2
+	font-size: 2.25em
+
+a
+	transition: $trans3
+	color: $accent
+
+.heading-line
+	text-align: center
+	position: relative
+	padding-bottom: .35em
+	&:after
+		content: ''
+		display: inline-block
+		width: 5em
+		border-bottom: solid 5px $accent
+		position: absolute
+		bottom: 0
+		left: 50%
+		margin-left: -2.5em
+.list-unstyle
+	list-style-type: none
+	padding-left: 0
+	margin-bottom: 0
+
+// Custom Sass / Remove before use
+
+.container
+	max-width: 1170px
+	padding:
+		right: $gutter/2
+		left: $gutter/2
+	margin:
+		left: auto
+		right: auto
+
+.img-responsive
+	display: block
+	max-width: 100%
+	height: auto
+
+.grid
+	display: grid
+	grid-gap: $gutter
+	grid-template-columns: 1fr 1fr
+	+media-breakpoint-down(xs)
+		display: block
+		> div
+			padding: $gutter/2 0
+
+.flex
+	display: flex
+	&.jcsb
+		justify-content: space-between
+	&.aic
+		align-items: center
+	&.jcsa
+		justify-content: space-around
+.example-img
+	width: 100%
+
+.parent // Lazy Load Placeholder Generator: https://webdesign-master.ru/services/lazy/
+	background-image: url(data:image/gif;base64,R0lGODlhCgAIAIABAN3d3f///yH5BAEAAAEALAAAAAAKAAgAAAINjAOnyJv2oJOrVXrzKQA7)
+
+.section
+.bg-white
+	background-color: #fff
+
+//HEADER//
+.logo
+	width: 31%
+	a
+		display: inline-block
+.header
+	position: relative
+	background: #fff
+	box-shadow: inset 0 -1px 0 #EAEAEA
+	padding: 22px 0
+	z-index: 99
+	.contact
+		color: #3b3b3b
+		width: 24%
+	.phone
+		a
+			color: inherit
+			font-weight: bold
+			font-size: 1.375em
+			&:hover
+				text-decoration: none
+		.dropdown-menu
+			margin-left: -15px
+	.address
+		width: 20%
+.top-line
+	font-style: italic
+	line-height: 1.15
+.icon
+	padding-left: 47px
+	position: relative
+	&:before
+		content: ''
+		display: inline-block
+		position: absolute
+		left: 0
+		top: 50%
+		+transform(0, -50%)
+		width: 30px
+		height: 30px
+		background-image: url(../img/icon-sprite.png)
+		background-repeat: no-repeat
+		background-size: cover
+	&.address
+		&:before
+			background-position: -34px 0
+.navbar
+	position: absolute
+	top: 100%
+	width: 100%
+	background: #fff
+	ul
+		list-style-type: none
+		margin-bottom: 0
+		padding-left: 0
+.navbar-nav
+	>li
+		display: inline-block
+		font-family: $heading-font
+		font-weight: bold
+		text-transform: uppercase
+		font-size: .9375em
+		&:not(:last-child)
+			margin-right: 20px
+		&.active
+			a
+				color: $text
+				&:after
+					content: ''
+					display: inline-block
+					width: 100%
+					border-bottom: solid 3px $accent
+					position: absolute
+					bottom: 0
+					left: 0
+	a
+		display: inline-block
+		vertical-align: middle
+		color: #555
+		position: relative
+		padding: 15px 0
+		&:hover
+			text-decoration: none
+			color: $text
+	.dropdawn-menu
+		min-width: 180px
+	
+.dropdown
+	position: relative
+	a
+		vertical-align: middle
+	&:hover, &.active
+		.dropdown-menu
+			opacity: 1
+			visibility: visible
+			top: 100%
+.cover
+	display: inline-block
+	border-color: $arrow transparent transparent transparent
+	border-width: 7px 4px 0 4px
+	border-style: solid
+	width: 0
+	height: 0
+	vertical-align: middle
+.dropdown-menu
+	position: absolute
+	width: 100%
+	padding: 5px 0
+	background: #fff
+	top: 75%
+	box-shadow: 0 6px 24px rgba(#c5c5c5, .27)
+	border-radius: 0 0 5px 5px
+	opacity: 0
+	visibility: hidden
+	transition: $trans2
+	li
+		&.active
+			a
+				background: rgba($accent, .1)
+				color: $text
+	a
+		display: block
+		padding: 5px 15px
+		&:hover
+			background: rgba($accent, .1)
+
+//SLIDER//
+.main-slider
+	position: relative
+	.item
+		position: relative
+	.item-content
+		position: absolute
+		width: 100%
+		height: 100%
+		left: 0
+		top: 0
+		padding-top: 135px
+		.btn-lg
+			padding: 25px 30px
+			min-width: 360px
+	.description
+		font-size: 1.375em
+		opacity: .7
+		line-height: 1.2
+		margin-bottom: 35px
+	.h1
+		margin-bottom: .4em	
+.advantages
+	position: absolute
+	bottom: 0
+	left: 0
+	width: 100%
+	z-index: 10
+	margin-bottom: -45px
+	.flex
+		box-shadow: 0 6px 24px rgba(#c5c5c5, .27)
+		border-radius: 5px
+		padding: 20px
+	.spec-icon
+		width: 60px
+		margin: 0 auto
+		height: 63px
+		background-image: url(../img/spec_icon-sprite.png)
+		background-repeat: no-repeat
+		background-size: cover
+//CONTENT//
+.content-wrapper
+	padding-top: 54px
+
+//BUTTON//
+.btn
+	display: inline-block
+	padding: 15px 30px
+	min-width: 210px
+	border: none
+	border-radius: 5px
+	font-family: $default-font
+	font-size: .8125em
+	font-weight: bold
+	font-style: italic
+	text-decoration: none
+	text-align: center
+	outline: none
+	cursor: pointer
+	transition: $trans3
+	color: $text
+	&.btn-danger
+		color: red
+		&:hover
+			background: none
+	&.btn-default
+		color: $text
+		background: linear-gradient(to bottom, #ffd83b, #FFCC00)
+		position: relative
+		box-shadow: 0 -3px 16px rgba(#f3d02c, .35)
+		&:after, &:before
+			content: ''
+			position: absolute
+			bottom: 0
+			left: 0
+			width: 100%
+			border-radius: 5px
+			transition: $trans3
+		&:after
+			height: 20px
+			box-shadow: 0 3px 0 #DBBC2A
+		&:before
+			height: 100%
+			background: darken(#FFCC00, 5%)
+			opacity: 0
+		&:hover
+			&:before
+				opacity: 1
+		span
+			position: relative
+			z-index: 10
+	&:focus, &:hover
+		text-decoration: none
+	&:hover
+		background-color: darken($accent2, 5%)
+		color: $text
+	&:active
+		background-color: darken($accent2, 5%)
+		top: 3px
+		&:after
+			box-shadow: 0 0px 0 #DBBC2A
+	+ .btn
+		margin-Top: 10px
+	+ .btn-sky
+		margin-Top: 10px
+	&.btn-lg
+		font-size: 1.25em
+		padding: 18px 30px
+		min-width: 260px
+		border-radius: 10px
+		&:after, &:before
+			border-radius: 10px
+		&:after
+			box-shadow: 0 5px 0 #DBBC2A
+
+	&.btn-block
+		display: block
+		width: 100%
+	&.btn-close
+		background: transparent
+		padding: 5px	
+	&.btn-gray
+		padding: 15px 30px
+		background: #f9f9f9
+		font-size: 1em
+		font-weight: normal
+		&:hover
+			background: darken(#f9f9f9, 5%)
+.btn-line
+	display: inline-block
+	color: #252525
+	border: 1px solid $accent-line
+	padding: 5px 15px
+	border-radius: 5px
+	position: relative
+	&:hover
+		text-decoration: none
+		background: darken(#fff, 10%)
+		color: #252525
+	i
+		font-size: 80%
+		position: relative
+		top: -1px
+	&.btn-more
+		display: block
+.no-gutters-10
+	margin-right: -10px
+	margin-Top: -10px
+	>.col, [class*=col-]
+		padding-right: 10px
+		padding-Top: 10px
+.arrow-right-tail
+	display: inline-block
+	position: relative
+	width: 24px
+	height: 2px
+	background: $arrow
+	border-radius: 2px
+	margin-right: 20px
+	vertical-align: middle
+	&:before,&:after
+		content: ''
+		display: inline-block
+		position: absolute
+		width: 50%
+		height: 2px
+		right: 0
+		background: $arrow
+		border-radius: 3px
+		transform: rotate(-45deg) translate3d(-3px,4px,0)
+	&:after
+		transform: rotate(45deg) translate3d(-3px,-4px,0)
+//FORM//
+form
+	.agreement
+		color: #acacac
+.form-control
+	display: block
+	width: 100%
+	padding: 12px 5px
+	font-family: $default-font
+	font-size: 1.125em
+	line-height: 1.5
+	color: $text
+	background-color: #fff
+	background-clip: padding-box
+	border: none
+	border-bottom: 3px solid #959595
+.invalid-feedback, .invalid-tooltip
+	position: absolute
+	top: 100%
+	color: red
+	left: 220px
+	line-height: 1
+	margin-top: 10px
+.form-group
+	position: relative
+	margin-bottom: 15px
+	>span.error
+		position: absolute
+		line-height: 1
+		top: 100%
+label
+	font-weight: 600
+	margin-bottom: .1rem
+	sup
+		font-size: 100%
+		top: -5px
+		color: red
+[class*=error]
+	.error
+		font-size: 80%
+blockquote
+	margin: 0 0 20px
+	font-size: 1.09em
+	border-Top: 2px solid $accent
+	padding: 5px 15px
+.input-group
+	display: flex
+	flex-wrap: wrap
+	width: 100%
+	align-items: stretch
+	>.form-control
+		width: 1%
+		flex: 1 1 auto
+
+// POP-UP//
+
+.white-popup
+	position: relative
+	width: auto
+	max-width: 500px
+	margin: 40px auto
+	padding: 30px
+	border-radius: 10px
+	background: #fff
+	.wrap-forms 
+		//padding: 0
+		.form-group 
+			textarea
+				min-height: 90px
+	.message
+		text-align: center
+		padding: 30px 15px
+		font-size: 1.5em
+	.h2
+		margin-bottom: 1.1em
+.white-popup-block
+	max-width: 800px
+	margin: 40px auto
+	position: relative
+	background: #fff
+	form
+		max-width: 900px
+		margin: 0 auto
+	.container-fluid
+		max-width: 900px
+.mfp-arrow
+	&:before, &:after
+		color: #fff
+		font-size: 6.5em
+		margin: 0
+		border: none
+	&:before
+		font-family: FontAwesome
+		width: auto
+		height: auto
+		line-height: 1
+		top: 50%
+		+transform(-50%, 0)
+	&-right
+		&:before
+			content: '\f105'
+	&-Top
+		&:before
+			content: '\f104'
+.mfp-image-holder
+	.mfp-close
+		right: -24px
+		top: 10px
+
+//====== Zoom effect ======//
+.mfp-zoom-in
+	.mfp-with-anim
+		opacity: 0
+		transition: $trans3
+		transform: scale(0.8) 
+	&.mfp-bg
+		opacity: 0
+		transition: $trans3
+	&.mfp-ready
+		.mfp-with-anim
+			opacity: 1
+			transform: scale(1) 
+		&.mfp-bg
+			opacity: 0.8
+	&.mfp-removing
+		.mfp-with-anim
+			transform: scale(0.8) 
+			opacity: 0
+		&.mfp-bg
+			opacity: 0
+
+.mfp-fade
+	&.mfp-bg
+		opacity: 0
+		transition: $trans3
+		&.mfp-ready
+			opacity: 0.8
+		&.mfp-removing
+			opacity: 0
+	&.mfp-wrap 
+		.mfp-content
+			opacity: 0
+			transition: $trans3
+		&.mfp-ready 
+			.mfp-content
+				opacity: 1
+		&.mfp-removing 
+			.mfp-content
+				opacity: 0
+.mfp-with-zoom 
+	.mfp-container, &.mfp-bg
+		opacity: 0
+		transition: $trans3
+	&.mfp-ready 
+		.mfp-container
+			opacity: 1
+		&.mfp-bg
+			opacity: 0.8
+	&.mfp-removing 
+		.mfp-container, &.mfp-bg
+			opacity: 0
+.mfp-move-from-top
+	.mfp-content
+		vertical-align: middle
+	.mfp-with-anim
+		opacity: 0
+		transition: $trans3
+		+transform(0, -100px)
+	&.mfp-bg
+		opacity: 0
+		transition: $trans3
+	&.mfp-ready
+		.mfp-with-anim
+			opacity: 1
+			+transform(0, 0)
+		&.mfp-bg
+			opacity: .8
+	&.mfp-removing
+		.mfp-with-anim
+			+transform(0, -50px)
+			opacity: 0
