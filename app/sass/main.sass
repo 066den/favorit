@@ -48,6 +48,9 @@ h6,.h6
 a
 	transition: $trans3
 	color: $accent
+button
+	&:focus
+		outline: none
 p
 	line-height: 1.2
 .text-center
@@ -100,13 +103,12 @@ p
 	&.col-1-2
 		grid-template-columns: 1fr 2fr
 	&.col-5-7
-		grid-template-columns: 9fr 15fr
+		grid-template-columns: 35% 63%
 	
 	+media-breakpoint-down(xs)
 		display: block
 		> div
 			padding: $gutter/2 0
-
 
 .flex
 	display: flex
@@ -171,6 +173,10 @@ p
 	&.address
 		&:before
 			background-position: -34px 0
+	&.email
+		&:before
+			background-position: -65px 0
+	
 .navbar
 	position: absolute
 	top: 100%
@@ -357,11 +363,117 @@ p
 		height: 61px
 		background-position: -295px 0
 .brands
+	.grid
+		align-items: center
 	.h2
 		margin-bottom: 0
 		span
 			color: $accent
+.brand-list
+	padding: 0 10px 0 30px
+	.item
+		border: 1px solid #E4E9F6
+		padding: 15px
+		.owl-dots
+			padding-top: 15px
+.owl-carousel
+	&.carousel
+		.owl-dots
+			text-align: center
+		button
+			&.owl-dot
+				display: inline-block
+				width: 9px
+				height: 9px
+				background: $accent
+				opacity: .5
+				border-radius: 10em
+				margin: 7px
+				transition: $trans3
+				&.active
+					opacity: 1
+					transform: scale(1.333)
+		
+.reviews
+	.carousel
+	.item
+		border-radius: 5px
+		padding: 40px 25px
+		background: #fff
+		transition: $trans3
+	.owl-item
+		padding: 16px 0 24px
+		&.center
+			.item
+				box-shadow: 0 6px 24px rgba(#c5c5c5, .27)
+	.user-icon
+		width: 27%
+		line-height: 1.2		
+	.avatar
+		width: 110px
+		height: 110px
+		border-radius: 100%
+		overflow: hidden
+		margin: 0 auto 20px
+	.org
+		margin-bottom: 20px
+	.review
+		width: 100%
+		padding: 0 30px
+		.h6
+			min-height: 3.5em
+	.owl-carousel
+		.owl-nav
+			position: absolute
+			width: 50%
+			top: 50%
+			left: 50%
+			+transform(-50%, -50%)
+			display: flex
+			justify-content: space-between
+			button
+				width: 80px
+				height: 80px
+				&:hover
+					.arrow-left-lg,.arrow-right-lg
+						&:before, &:after
+							background: $accent
+							opacity: 1
+.map
+	height: 560px
+	position: relative
+	.contact-block
+		position: absolute
+		background: #fff
+		top: 80px
+		left: 50%
+		margin-left: -570px
+		padding: 50px 30px
+		box-shadow: 0 6px 24px rgba(#c5c5c5, .27)
+		.icon
+			line-height: 1.2
+			margin-bottom: 40px
+			a
+				color: $text
+				&:hover
+					text-decoration: none
+					color: $accent
+			&:before
+				height: 28px
+				background-position: 2px 0
+			&.address
+				&:before
+					background-position: -29px 0
+			&.email
+				a
+					font-style: italic
+					color: $accent
+					text-decoration: underline
+				&:before
+					background-position: -60px 0
 
+	#map-canvas
+		min-height: 100%
 //BUTTON//
 .btn
 	display: inline-block
@@ -404,6 +516,7 @@ p
 			background: darken(#FFCC00, 5%)
 			opacity: 0
 		&:hover
+			box-shadow: 0 -3px 26px rgba(#f3d02c, .5)
 			&:before
 				opacity: 1
 		span
@@ -490,6 +603,35 @@ p
 		transform: rotate(-45deg) translate3d(-3px,4px,0)
 	&:after
 		transform: rotate(45deg) translate3d(-3px,-4px,0)
+.arrow-right-lg, .arrow-left-lg
+	display: inline-block
+	position: relative
+	width: 40px
+	height: 3px
+	background: transparent
+	border-radius: 2px
+	vertical-align: middle
+	&:before,&:after
+		content: ''
+		display: inline-block
+		position: absolute
+		width: 100%
+		height: 3px
+		left: 0
+		background: $arrow
+		opacity: .5
+		border-radius: 3px
+		transition: $trans3
+.arrow-right-lg
+	&:before
+		transform: rotate(-60deg) translate3d(-10px,16px,0)
+	&:after
+		transform: rotate(60deg) translate3d(-10px,-16px,0)
+.arrow-left-lg
+	&:before
+		transform: rotate(60deg) translate3d(10px,16px,0)
+	&:after
+		transform: rotate(-60deg) translate3d(10px,-16px,0)
 //FORM//
 form
 	.agreement

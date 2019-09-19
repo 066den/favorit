@@ -150,17 +150,89 @@
 			<div class="container">
 				<div class="grid col-5-7">
 					<div class="h2">Мы работаем только<br> <span>с проверенными</span> брендами</div>
-					<div class="brand-list flex aic jcsb">
-						<img src="img/rehau.jpg" alt="" class="img-responsive">
-						<img src="img/melke.jpg" alt="" class="img-responsive">
-						<img src="img/siegenia.jpg" alt="" class="img-responsive">
+					<div class="brand-list">
+						<div class="owl-carousel carousel">
+							<div class="item"><img src="img/rehau.jpg" alt="" class="img-responsive"></div>
+							<div class="item"><img src="img/melke.jpg" alt="" class="img-responsive"></div>
+							<div class="item"><img src="img/siegenia.jpg" alt="" class="img-responsive"></div>
+							<div class="item"><img src="img/melke.jpg" alt="" class="img-responsive"></div>
+							<div class="item"><img src="img/siegenia.jpg" alt="" class="img-responsive"></div>
+							<div class="item"><img src="img/rehau.jpg" alt="" class="img-responsive"></div>
+						</div>
 					</div>
 				</div>
 			</div>
 		</div>
+		<div class="section reviews bg-gray">
+			<div class="h2 heading-line">Отзывы наших клиентов</div>
+			<div class="owl-carousel carousel">
+				<div class="item">
+					<div class="flex">
+						<div class="user-icon text-center">
+							<div class="avatar"><img src="img/user-1.jpg" alt="" class="img-responsive"></div>
+							<div class="org"><strong>Додо-пицца</strong></div>
+							<div class="name">Роман Иванцев</div>
+							<div class="post">Главный менеджер</div>
+						</div>
+						<div class="review">
+							<div class="h6">Быстрая и чистая работа...</div>
+							<p>Быстрая и чистая работа. С момента заказа и до установки прошло 3 дня. Все договорённости были соблюдены. Даже сетку москитную подарили. Ребята молодцы, поставили всё за 1,5 часа. Убрали за собой. Старые окна вынесли. Советую</p>
+						</div>
+					</div>
+				</div>
+				<div class="item">
+					<div class="flex">
+						<div class="user-icon text-center">
+							<div class="avatar"><img src="img/user-1.jpg" alt="" class="img-responsive"></div>
+							<div class="org"><strong>Додо-пицца</strong></div>
+							<div class="name">Роман Иванцев</div>
+							<div class="post">Главный менеджер</div>
+						</div>
+						<div class="review">
+							<div class="h6">Быстрая и чистая работа...</div>
+							<p>Быстрая и чистая работа. С момента заказа и до установки прошло 3 дня. Все договорённости были соблюдены. Даже сетку москитную подарили. Ребята молодцы, поставили всё за 1,5 часа. Убрали за собой. Старые окна вынесли. Советую</p>
+						</div>
+					</div>
+				</div>
+				<div class="item">
+					<div class="flex">
+						<div class="user-icon text-center">
+							<div class="avatar"><img src="img/user-1.jpg" alt="" class="img-responsive"></div>
+							<div class="org"><strong>Додо-пицца</strong></div>
+							<div class="name">Роман Иванцев</div>
+							<div class="post">Главный менеджер</div>
+						</div>
+						<div class="review">
+							<div class="h6">Быстрая и чистая работа...</div>
+							<p>Быстрая и чистая работа. С момента заказа и до установки прошло 3 дня. Все договорённости были соблюдены. Даже сетку москитную подарили. Ребята молодцы, поставили всё за 1,5 часа. Убрали за собой. Старые окна вынесли. Советую</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="map">
+			<div id="map-canvas"></div>
+			<div class="contact-block">
+				<ul class="list-unstyle">
+					<li class="address icon"><strong>г. Ярославль, Собинова,27а</strong></li>
+					<li class="contact icon">
+						<a href="#"><strong>+7 (4852) 662-667</strong></a><br>
+						<a href="#"><strong>+7 (4852) 662-667</strong></a>
+					</li>
+					<li class="email icon"><a href="mailto:yarfavorite@mail.ru">yarfavorite@mail.ru</a></li>
+				</ul>
+				<div class="text-center">
+					<a href="#" class="btn btn-default"><span>Заказать звонок</span></a>
+				</div>
+			</div>
+		</div>
+		
 	</div>
 	<script src="js/scripts.min.js"></script>
-
+	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCkvD4PB-QT_rqZ7DVahozFj9sMuOzr6Nw"></script>
+	<script>
+	  google.maps.event.addDomListener(window, 'load', initMap([57.627962, 39.882600]));
+  </script> 
 </body>
 </html>
 
