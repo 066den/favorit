@@ -24,8 +24,7 @@ body
 	font-family: $default-font
 	overflow-x: hidden
 	color: $text
-	background-color: #FBFBFB
-
+	
 h1,h2,h3,h4,h5,h6,
 .h1,.h2,.h3,.h4,.h5,.h6
 	margin-top: 0
@@ -41,15 +40,23 @@ h1,.h1
 
 h2,.h2
 	font-size: 2.25em
+	margin-bottom: 1em
+
+h6,.h6
+	font-size: 1.25em
 
 a
 	transition: $trans3
 	color: $accent
-
+p
+	line-height: 1.2
+.text-center
+	text-align: center
 .heading-line
 	text-align: center
 	position: relative
 	padding-bottom: .35em
+	margin-bottom: 2em
 	&:after
 		content: ''
 		display: inline-block
@@ -59,10 +66,13 @@ a
 		bottom: 0
 		left: 50%
 		margin-left: -2.5em
-.list-unstyle
+.list-unstyle, .list-inline
 	list-style-type: none
 	padding-left: 0
 	margin-bottom: 0
+.list-inline
+	li
+		display: inline-block
 
 // Custom Sass / Remove before use
 
@@ -83,11 +93,20 @@ a
 .grid
 	display: grid
 	grid-gap: $gutter
-	grid-template-columns: 1fr 1fr
+	&.col-1-1-1
+		grid-template-columns: 1fr 1fr 1fr
+	&.col-1-1
+		grid-template-columns: 1fr 1fr
+	&.col-1-2
+		grid-template-columns: 1fr 2fr
+	&.col-5-7
+		grid-template-columns: 9fr 15fr
+	
 	+media-breakpoint-down(xs)
 		display: block
 		> div
 			padding: $gutter/2 0
+
 
 .flex
 	display: flex
@@ -103,9 +122,8 @@ a
 .parent // Lazy Load Placeholder Generator: https://webdesign-master.ru/services/lazy/
 	background-image: url(data:image/gif;base64,R0lGODlhCgAIAIABAN3d3f///yH5BAEAAAEALAAAAAAKAAgAAAINjAOnyJv2oJOrVXrzKQA7)
 
-.section
-.bg-white
-	background-color: #fff
+.bg-gray
+	background-color: #FBFBFB
 
 //HEADER//
 .logo
@@ -236,6 +254,7 @@ a
 //SLIDER//
 .main-slider
 	position: relative
+	margin-bottom: 120px
 	.item
 		position: relative
 	.item-content
@@ -255,6 +274,13 @@ a
 		margin-bottom: 35px
 	.h1
 		margin-bottom: .4em	
+.spec-icon
+	width: 60px
+	margin: 0 auto 18px
+	height: 63px
+	background-image: url(../img/spec_icon-sprite.png)
+	background-repeat: no-repeat
+	background-size: cover
 .advantages
 	position: absolute
 	bottom: 0
@@ -262,20 +288,79 @@ a
 	width: 100%
 	z-index: 10
 	margin-bottom: -45px
+	.item
+		width: 180px
+		text-align: center
+		&:nth-child(2)
+			.spec-icon
+				background-position: -72px 0
+		&:nth-child(3)
+			.spec-icon
+				background-position: -152px 0
+		&:nth-child(4)
+			.spec-icon
+				background-position: -230px 0
 	.flex
+		background-color: #fff
 		box-shadow: 0 6px 24px rgba(#c5c5c5, .27)
 		border-radius: 5px
 		padding: 20px
 	.spec-icon
-		width: 60px
-		margin: 0 auto
-		height: 63px
-		background-image: url(../img/spec_icon-sprite.png)
-		background-repeat: no-repeat
-		background-size: cover
+		background-position: 3px 0
+	.title
+		font-size: 1.125em
+		font-style: italic
+		line-height: 1.2
 //CONTENT//
 .content-wrapper
 	padding-top: 54px
+.section
+	padding: 60px 0
+.services
+	.grid
+		grid-gap: 30px
+	.item
+		color: inherit
+		&:hover
+			text-decoration: none
+			color: $accent
+			+transform(0, -25px)
+	.bg-image
+		padding-top: 68%
+		background-repeat: no-repeat
+		background-size: cover
+		border-radius: 5px
+		margin-bottom: 22px
+
+.production
+	background-repeat: no-repeat
+	background-size: auto 92%
+	background-position: right 70% center
+	&.visible
+		background-image: url(../img/production_bg.png)
+	.grid
+		>div
+			grid-column-start: 2
+			padding: 26px 0
+	li
+		max-width: 150px
+		line-height: 1.2
+		padding-top: 30px
+		padding-bottom: 30px
+		&:nth-child(2)
+			.spec-icon
+				background-position: -369px 0
+		&:nth-child(3)
+			.spec-icon
+				background-position: -442px 0
+	.spec-icon
+		height: 61px
+		background-position: -295px 0
+.brands
+	.h2
+		margin-bottom: 0
+		span
+			color: $accent
 
 //BUTTON//
 .btn
