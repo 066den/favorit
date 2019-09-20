@@ -3,7 +3,7 @@
 @import libs
 
 ::placeholder
-	color: #666
+	color: 898989
 
 ::selection
 	background-color: $accent
@@ -58,7 +58,7 @@ p
 .heading-line
 	text-align: center
 	position: relative
-	padding-bottom: .35em
+	padding-bottom: .7em
 	margin-bottom: 2em
 	&:after
 		content: ''
@@ -102,9 +102,14 @@ p
 		grid-template-columns: 1fr 1fr
 	&.col-1-2
 		grid-template-columns: 1fr 2fr
+	&.col-2-1
+		grid-template-columns: 2fr 1fr
 	&.col-5-7
 		grid-template-columns: 35% 63%
-	
+	&.acc
+		align-content: center
+	&.aic
+		align-items: center
 	+media-breakpoint-down(xs)
 		display: block
 		> div
@@ -582,14 +587,13 @@ p
 	>.col, [class*=col-]
 		padding-right: 10px
 		padding-Top: 10px
-.arrow-right-tail
+.arrow-right-tail, .arrow-right-longtail
 	display: inline-block
 	position: relative
 	width: 24px
 	height: 2px
 	background: $arrow
 	border-radius: 2px
-	margin-right: 20px
 	vertical-align: middle
 	&:before,&:after
 		content: ''
@@ -600,9 +604,25 @@ p
 		right: 0
 		background: $arrow
 		border-radius: 3px
+.arrow-right-tail
+	margin-right: 20px
+	&:before
 		transform: rotate(-45deg) translate3d(-3px,4px,0)
 	&:after
 		transform: rotate(45deg) translate3d(-3px,-4px,0)
+.arrow-right-longtail
+	height: 1px
+	background: $text
+	margin-left: 20px
+	width: 40px
+	&:before,&:after
+		background: $text
+		height: 1px
+		width: 22%
+	&:before
+		transform: rotate(-45deg) translate3d(0px,4px,0)
+	&:after
+		transform: rotate(45deg) translate3d(0px,-4px,0)
 .arrow-right-lg, .arrow-left-lg
 	display: inline-block
 	position: relative
@@ -633,21 +653,23 @@ p
 	&:after
 		transform: rotate(-60deg) translate3d(10px,-16px,0)
 //FORM//
-form
-	.agreement
-		color: #acacac
+			
 .form-control
 	display: block
 	width: 100%
-	padding: 12px 5px
+	padding: 20px 20px
 	font-family: $default-font
-	font-size: 1.125em
+	//font-size: 1.125em
 	line-height: 1.5
 	color: $text
 	background-color: #fff
 	background-clip: padding-box
-	border: none
-	border-bottom: 3px solid #959595
+	border: 1px solid $accent-line
+	border-radius: 5px
+	transition: $trans3
+	&:focus
+		border-color: $accent
+		box-shadow: 0 3px 16px #f4f4f4
 .invalid-feedback, .invalid-tooltip
 	position: absolute
 	top: 100%
@@ -665,6 +687,9 @@ form
 label
 	font-weight: 600
 	margin-bottom: .1rem
+	display: block
+	&.checkbox
+		font-weight: normal
 	sup
 		font-size: 100%
 		top: -5px
@@ -672,6 +697,32 @@ label
 [class*=error]
 	.error
 		font-size: 80%
+.checkbox
+	margin-bottom: 4px
+	padding-left: 27px
+	font-size: 15px
+	line-height: 27px
+	cursor: pointer
+	position: relative
+	input
+		position: absolute
+		left: -9999px
+		&:checked
+			+ i
+				border-color: #fff
+				border-width: 2px
+				background: $accent
+	i
+		width: 17px
+		height: 17px
+		border-width: 1px
+		border-color: $accent-line
+		border-style: solid
+		position: absolute
+		top: 5px
+		left: 0
+		display: block
+		background: #fff
 blockquote
 	margin: 0 0 20px
 	font-size: 1.09em
@@ -685,6 +736,9 @@ blockquote
 	>.form-control
 		width: 1%
 		flex: 1 1 auto
+textarea
+	resize: none
+	height: 230px
 
 // POP-UP//
 
