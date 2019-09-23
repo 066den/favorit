@@ -28,6 +28,36 @@ document.addEventListener("DOMContentLoaded", function() {
 		//autoplayTimeout:1500
 	})
 
+	$('.zoom-gallery').magnificPopup({
+		delegate: 'a',
+		type: 'image',
+		closeOnContentClick: false,
+		closeBtnInside: false,
+		mainClass: 'mfp-with-zoom mfp-img-mobile',
+		image: {
+			verticalFit: true,
+		},
+		gallery: {
+			enabled: true,
+			tCounter: '<span class="mfp-counter">%curr% из %total%</span>'
+		},
+		zoom: {
+			enabled: true,
+			duration: 300, // don't foget to change the duration also in CSS
+			
+		}
+		
+	});
+
+	$(window).scroll(function(){
+		var topHeight = $('.header').height();
+		if($(window).scrollTop() > topHeight) {
+			$('.navbar').addClass('stuck');
+		} else {
+			$('.navbar').removeClass('stuck');
+		}
+	})
+
 });
 
 

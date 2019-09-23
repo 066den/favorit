@@ -44,6 +44,7 @@ gulp.task('scripts', function() {
 		'node_modules/jquery/dist/jquery.min.js', // Optional jQuery plug-in (npm i --save-dev jquery)
 		'app/js/_lazy.js', // JS library plug-in example
 		'app/libs/owl.carousel/owl.carousel.js',
+		'app/libs/magnific-popup/dist/jquery.magnific-popup.min.js',
 
 		'app/js/_custom.js', // Custom scripts. Always at the end
 		])

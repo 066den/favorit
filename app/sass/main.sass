@@ -42,9 +42,14 @@ h2,.h2
 	font-size: 2.25em
 	margin-bottom: 1em
 
-h6,.h6
+h4,.h4
+	font-size: 1.5em
+
+h5,.h5
 	font-size: 1.25em
 
+h6,.h6
+	font-size: 1.125em
 a
 	transition: $trans3
 	color: $accent
@@ -53,6 +58,7 @@ button
 		outline: none
 p
 	line-height: 1.2
+	//font-size: 1.0625em
 .text-center
 	text-align: center
 .heading-line
@@ -79,15 +85,17 @@ p
 
 // Custom Sass / Remove before use
 
-.container
-	max-width: 1170px
+.container, .container-fluid
 	padding:
 		right: $gutter/2
 		left: $gutter/2
+.container-fluid
+	width: 100%
+.container
+	max-width: 1170px		
 	margin:
 		left: auto
 		right: auto
-
 .img-responsive
 	display: block
 	max-width: 100%
@@ -96,6 +104,10 @@ p
 .grid
 	display: grid
 	grid-gap: $gutter
+	&.reverse
+		grid-auto-flow: dense
+		.text-wrap
+			grid-column: 2
 	&.col-1-1-1
 		grid-template-columns: 1fr 1fr 1fr
 	&.col-1-1
@@ -104,12 +116,22 @@ p
 		grid-template-columns: 1fr 2fr
 	&.col-2-1
 		grid-template-columns: 2fr 1fr
+	&.col-1-2-1
+		grid-template-columns: 1fr 2fr 1fr
+	&.col-auto
+		grid-template-columns: auto auto
+
 	&.col-5-7
 		grid-template-columns: 35% 63%
 	&.acc
 		align-content: center
 	&.aic
 		align-items: center
+	&.gap-30
+		grid-gap: 30px
+	&.gap-40
+		grid-gap: 40px
+	
 	+media-breakpoint-down(xs)
 		display: block
 		> div
@@ -132,17 +154,20 @@ p
 .bg-gray
 	background-color: #FBFBFB
 
+.mb-30
+	margin-bottom: 30px
+
 //HEADER//
-.logo
-	width: 31%
-	a
-		display: inline-block
 .header
 	position: relative
 	background: #fff
 	box-shadow: inset 0 -1px 0 #EAEAEA
 	padding: 22px 0
 	z-index: 99
+	.logo
+		width: 31%
+		a
+			display: inline-block
 	.contact
 		color: #3b3b3b
 		width: 24%
@@ -163,6 +188,11 @@ p
 .icon
 	padding-left: 47px
 	position: relative
+	a
+		color: $text
+		&:hover
+			text-decoration: none
+			color: $accent
 	&:before
 		content: ''
 		display: inline-block
@@ -170,7 +200,7 @@ p
 		left: 0
 		top: 50%
 		+transform(0, -50%)
-		width: 30px
+		width: 31px
 		height: 30px
 		background-image: url(../img/icon-sprite.png)
 		background-repeat: no-repeat
@@ -181,12 +211,20 @@ p
 	&.email
 		&:before
 			background-position: -65px 0
+	&.time
+		&:before
+			background-position: -101px 0
+	
 	
 .navbar
 	position: absolute
 	top: 100%
 	width: 100%
+	left: 0
 	background: #fff
+	&.stuck
+		position: fixed
+		top: 0
 	ul
 		list-style-type: none
 		margin-bottom: 0
@@ -201,7 +239,7 @@ p
 		&:not(:last-child)
 			margin-right: 20px
 		&.active
-			a
+			>a
 				color: $text
 				&:after
 					content: ''
@@ -217,6 +255,7 @@ p
 		color: #555
 		position: relative
 		padding: 15px 0
+		white-space: nowrap
 		&:hover
 			text-decoration: none
 			color: $text
@@ -227,7 +266,7 @@ p
 	position: relative
 	a
 		vertical-align: middle
-	&:hover, &.active
+	&:hover
 		.dropdown-menu
 			opacity: 1
 			visibility: visible
@@ -240,9 +279,11 @@ p
 	width: 0
 	height: 0
 	vertical-align: middle
+	margin-left: 3px
 .dropdown-menu
 	position: absolute
-	width: 100%
+	min-width: 100%
+	max-width: 150%
 	padding: 5px 0
 	background: #fff
 	top: 75%
@@ -284,7 +325,19 @@ p
 		line-height: 1.2
 		margin-bottom: 35px
 	.h1
-		margin-bottom: .4em	
+		margin-bottom: .4em
+	.advantages
+		position: absolute
+		bottom: 0
+		left: 0
+		width: 100%
+		z-index: 10
+		margin-bottom: -45px
+		.flex
+			background-color: #fff
+			box-shadow: 0 6px 24px rgba(#c5c5c5, .27)
+			border-radius: 5px
+			padding: 20px
 .spec-icon
 	width: 60px
 	margin: 0 auto 18px
@@ -293,12 +346,7 @@ p
 	background-repeat: no-repeat
 	background-size: cover
 .advantages
-	position: absolute
-	bottom: 0
-	left: 0
-	width: 100%
-	z-index: 10
-	margin-bottom: -45px
+	margin-bottom: 40px
 	.item
 		width: 180px
 		text-align: center
@@ -311,11 +359,6 @@ p
 		&:nth-child(4)
 			.spec-icon
 				background-position: -230px 0
-	.flex
-		background-color: #fff
-		box-shadow: 0 6px 24px rgba(#c5c5c5, .27)
-		border-radius: 5px
-		padding: 20px
 	.spec-icon
 		background-position: 3px 0
 	.title
@@ -425,7 +468,7 @@ p
 	.review
 		width: 100%
 		padding: 0 30px
-		.h6
+		.h5
 			min-height: 3.5em
 	.owl-carousel
 		.owl-nav
@@ -444,6 +487,81 @@ p
 						&:before, &:after
 							background: $accent
 							opacity: 1
+
+.zoom-gallery
+	padding: 40px 25px 0
+	&.grid
+		grid-template-columns: repeat(auto-fit, minmax(350px, 1fr))
+		grid-gap: 50px
+
+.contact-block
+	.h6
+		font-family: $default-font
+		margin-bottom: 0
+	.icon
+		font-weight: bold
+	ul
+		display: flex
+		flex-direction: column
+		justify-content: space-between
+	.contact
+		.h6
+			font-size: 1.5em
+
+.stock
+	color: $text
+	display: block
+	border-radius: 6px
+	overflow: hidden
+	box-shadow: 0 0 0 1px #E4E9F6
+	margin-bottom: 30px
+	&:hover
+		color: $text
+		text-decoration: none
+		box-shadow: 0 3px 32px rgba(#c1c1c1, .49)
+	.thumbnail
+		background-position: center
+		min-height: 260px
+		background-repeat: no-repeat
+	.text-block
+		padding: 15px
+		.h4
+			text-transform: uppercase
+			margin-bottom: 1.1em
+	.description
+		font-size: 1.125em
+		line-height: 1.2
+		margin-bottom: 1em
+	.note
+		color: #898989
+
+.products
+	grid-template-columns: repeat(auto-fit, minmax(260px, 1fr))
+	grid-gap: 30px
+	.product
+		text-align: center
+		background: #fff
+		border-radius: 5px
+		padding: 20px 15px
+		.thumb
+			display: inline-block
+			margin: 0 auto
+		.product-body
+			padding: 0 15px
+		.title
+			display: inline-block
+			font-weight: bold
+			font-size: .875em
+			color: $text
+			line-height: 1.2
+			&:hover
+				color: $accent
+				text-decoration: none
+		.price
+			font-weight: bold
+			font-size: 1.125em
+		.btn
+			display: none
 .map
 	height: 560px
 	position: relative
@@ -458,11 +576,6 @@ p
 		.icon
 			line-height: 1.2
 			margin-bottom: 40px
-			a
-				color: $text
-				&:hover
-					text-decoration: none
-					color: $accent
 			&:before
 				height: 28px
 				background-position: 2px 0
@@ -479,6 +592,18 @@ p
 
 	#map-canvas
 		min-height: 100%
+
+.footer
+	padding: 25px 0
+	.copyright
+		color: #898989
+		font-size: .625em
+	.privaci
+		font-size: .75em
+		text-align: right
+
+
+
 //BUTTON//
 .btn
 	display: inline-block
@@ -782,12 +907,12 @@ textarea
 		width: auto
 		height: auto
 		line-height: 1
-		top: 50%
+		left: 50%
 		+transform(-50%, 0)
 	&-right
 		&:before
 			content: '\f105'
-	&-Top
+	&-left
 		&:before
 			content: '\f104'
 .mfp-image-holder
