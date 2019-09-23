@@ -33,7 +33,7 @@
 					</div>
 					<div class="address icon">Собинова, 27а<br>г. Ярославль</div>
 					<div class="button-call">
-						<a href="#" class="btn btn-gray"><span class="arrow-right-tail"></span>Заказать звонок</a>
+						<a href="#callback" class="btn btn-gray popup-with-form"><span class="arrow-right-tail"></span>Заказать звонок</a>
 					</div>
 				</div>
 			</div>
@@ -83,11 +83,11 @@
 				<div class="container">
 					<div class="flex jcsa">
 						<div class="item">
-							<div class="spec-icon"></div>
+							<div class="spec-icon door"></div>
 							<div class="title">Изготовление окон за 5 дней</div>
 						</div>
 						<div class="item">
-							<div class="spec-icon"></div>
+							<div class="spec-icon key"></div>
 							<div class="title">Изготовление потолка за 1 день</div>
 						</div>
 						<div class="item">
@@ -100,6 +100,16 @@
 						</div>
 					</div>
 				</div>
+			</div>
+			<div class="icon-box">
+				<a href="#callback" class="collback icon-circle popup-with-form">
+					<span class="ico"></span>
+					<span>Заказать звонок</span>
+				</a>
+				<a href="#" class="gauge icon-circle popup-with-form">
+					<span class="ico"></span>
+					<span>Вызвать замерщика</span>
+				</a>
 			</div>
 		</div>
 		<div class="section services">
@@ -268,6 +278,16 @@
 			</div>
 		</div>
 	</footer>
+	<div id="callback" class="white-popup mfp-with-anim mfp-hide">
+		<form action="">
+			<div class="h2">Оставьте контакты и мы свяжемся с вами через 5 минут</div>
+			<div class="form-group"><input id="name" type="text" class="form-control phone-mask" placeholder="+7 (000) 000 0000"></div>
+			<button class="btn btn-default"><span>Перезвоните мне</span></button>
+		</form><br>
+		<p>Или позвоните по номеру: <br>+7(4852) 662-667</p>
+	</div>
+		
+	</div>
 	<script src="js/scripts.min.js"></script>
 	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCkvD4PB-QT_rqZ7DVahozFj9sMuOzr6Nw"></script>
 	<script>

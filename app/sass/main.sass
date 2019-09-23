@@ -157,6 +157,22 @@ p
 .mb-30
 	margin-bottom: 30px
 
+@keyframes pulse-white
+	0%
+		box-shadow: 0 0 0 0 rgba(#fff, .6)
+	70%
+		box-shadow: 0 0 0 20px rgba(#fff, 0)
+	100%
+		box-shadow: 0 0 0 0 rgba(#fff, 0)
+
+@keyframes pulse-accent
+	0%
+		box-shadow: 0 0 0 0 rgba(#399BE0, .6)
+	70%
+		box-shadow: 0 0 0 20px rgba(#399BE0, 0)
+	100%
+		box-shadow: 0 0 0 0 rgba(#399BE0, 0)
+
 //HEADER//
 .header
 	position: relative
@@ -214,8 +230,42 @@ p
 	&.time
 		&:before
 			background-position: -101px 0
-	
-	
+.icon-box
+	position: absolute
+	right: 50px
+	bottom: 50px
+	display: flex
+	z-index: 10
+.icon-circle
+	border-radius: 100%
+	background: #399BE0
+	width: 120px
+	height: 120px
+	padding: 18px
+	text-align: center
+	line-height: 1.2
+	font-size: .8125em
+	color: #fff
+	animation: pulse-accent 2s infinite
+	&:hover
+		text-decoration: none
+		animation: none
+	&.gauge
+		background: #fff
+		color: $text
+		animation: pulse-white 2s infinite
+		.ico
+			background-position: -45px 0
+	.ico
+		display: inline-block
+		width: 44px
+		height: 44px
+		background-image: url(../img/header-sprite.png)
+		background-repeat: no-repeat
+		margin-bottom: 10px
+	&+.icon-circle
+		margin-left: 25px
+
 .navbar
 	position: absolute
 	top: 100%
@@ -353,12 +403,17 @@ p
 		&:nth-child(2)
 			.spec-icon
 				background-position: -72px 0
+				&.key
+					background-position: -535px 0
 		&:nth-child(3)
 			.spec-icon
 				background-position: -152px 0
 		&:nth-child(4)
 			.spec-icon
 				background-position: -230px 0
+		.spec-icon
+			&.door
+				background-position: -607px 0
 	.spec-icon
 		background-position: 3px 0
 	.title
@@ -541,13 +596,34 @@ p
 	.product
 		text-align: center
 		background: #fff
-		border-radius: 5px
-		padding: 20px 15px
+		padding: 22px 15px 0
+		transition: $trans3
+		position: relative
+		&:before
+			content: ''
+			position: absolute
+			background: #fff
+			top: 0
+			left: 0
+			height: 100%
+			width: 100%
+			transition: $trans3
+			box-shadow: 0 0 0 1px #f8f8f8
+			border-radius: 6px
+			z-index: -1
+		&:hover
+			+transform(0, -30px)
+			z-index: 10
+			&:before
+				box-shadow: -3px -3px 29px rgba(#000, .15)
+				height: 120%
+			.product-footer
+				opacity: 1
 		.thumb
 			display: inline-block
 			margin: 0 auto
 		.product-body
-			padding: 0 15px
+			padding: 30px 15px 20px
 		.title
 			display: inline-block
 			font-weight: bold
@@ -560,8 +636,15 @@ p
 		.price
 			font-weight: bold
 			font-size: 1.125em
+		.product-footer
+			position: absolute
+			left: 0
+			width: 100%
+			opacity: 0
+			transition: $trans3
 		.btn
-			display: none
+			font-size: .875em
+			
 .map
 	height: 560px
 	position: relative
@@ -601,8 +684,6 @@ p
 	.privaci
 		font-size: .75em
 		text-align: right
-
-
 
 //BUTTON//
 .btn
@@ -875,6 +956,7 @@ textarea
 	padding: 30px
 	border-radius: 10px
 	background: #fff
+	text-align: center
 	.wrap-forms 
 		//padding: 0
 		.form-group 
@@ -886,6 +968,8 @@ textarea
 		font-size: 1.5em
 	.h2
 		margin-bottom: 1.1em
+	.form-control
+		padding: 12px
 .white-popup-block
 	max-width: 800px
 	margin: 40px auto
