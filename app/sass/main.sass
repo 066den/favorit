@@ -112,8 +112,10 @@ p
 		grid-auto-flow: dense
 		.text-wrap
 			grid-column: 2
-	&.col-1-1-1
-		grid-template-columns: 1fr 1fr 1fr
+	&.col-3-auto
+		grid-template-columns: repeat(3,1fr)
+	&.col-4-auto
+		grid-template-columns: repeat(4,1fr)
 	&.col-1-1
 		grid-template-columns: 1fr 1fr
 	&.col-1-2
@@ -123,8 +125,7 @@ p
 	&.col-1-2-1
 		grid-template-columns: 1fr 2fr 1fr
 	&.col-auto
-		grid-template-columns: auto auto
-
+		grid-template-columns: repeat(auto-fit, minmax(350px, 1fr))
 	&.col-5-7
 		grid-template-columns: 35% 63%
 	&.acc
@@ -502,7 +503,6 @@ p
 					transform: scale(1.333)
 		
 .reviews
-	.carousel
 	.item
 		border-radius: 5px
 		padding: 40px 25px
@@ -527,7 +527,7 @@ p
 	.review
 		width: 100%
 		padding: 0 30px
-		.h5
+		.h5,h5
 			min-height: 3.5em
 	.owl-carousel
 		.owl-nav
@@ -649,8 +649,29 @@ p
 		.btn
 			font-size: .875em
 
+.goods
+	.item
+		text-align: center
+		position: relative
+	.h5
+		text-transform: uppercase
+		margin-bottom: 30px
+	.thumb
+		min-height: 330px
+		img
+			margin: 0 auto
+	.product-label
+		position: absolute
+		top: 40px
+		right: 0
+		background: $accent
+		color: #fff
+		font-family: $heading-font
+		font-weight: bold
+		padding: 10px 15px
 .shema-wrap
 	position: relative
+	margin-bottom: 70px
 	img
 		margin: 0 auto
 	.pointer
@@ -674,23 +695,48 @@ p
 				background: inherit
 				top: 50%
 				margin-top: -4px
-		&.left
-			left: 50%
-			margin-left: -480px
-			i
+	.left
+		left: 50%
+		margin-left: -480px
+		text-align: right
+		i
+			left: 100%
+			transform-origin: left
+			&:before
 				left: 100%
-				transform-origin: left
-				&:before
-					left: 100%
-		
-		strong
-			display: block
-			font-size: 1.2em
-			text-transform: uppercase
-		&:nth-child(1)
+		&:nth-of-type(1)
 			top: 50px
 			i
 				transform: rotate(-22deg)
+		&:nth-of-type(2)
+			top: 50%
+			margin-top: -20px
+		&:nth-of-type(3)
+			bottom: 50px
+			i
+				transform: rotate(15deg)
+			
+	.right
+		left: 50%
+		margin-left: 250px
+		i
+			right: 100%
+			transform-origin: right
+			&:before
+				right: 100%
+		&:nth-of-type(1)
+			top: 50px
+			i
+				transform: rotate(-22deg)
+				width: 60%
+		&:nth-of-type(2)
+			top: 50%
+			margin-top: -20px
+
+	strong
+		display: block
+		font-size: 1.2em
+		text-transform: uppercase
 
 			
 .map
@@ -758,6 +804,7 @@ p
 		color: $text
 		background: linear-gradient(to bottom, #ffd83b, #FFCC00)
 		position: relative
+		font-size: .875em
 		box-shadow: 0 -3px 16px rgba(#f3d02c, .35)
 		&:after, &:before
 			content: ''
@@ -907,6 +954,39 @@ p
 	&:after
 		transform: rotate(-60deg) translate3d(10px,-16px,0)
 //FORM//
+
+.triple
+	box-shadow: 0 3px 24px rgba(#9b9b9b, .25)
+	border-radius: 5px
+	padding: 15px 60px
+	margin-bottom: 60px
+	position: relative
+	>*
+		position: relative
+		z-index: 5
+	&:before, &:after
+		content: ''
+		position: absolute
+		left: 50%
+		top: 50%
+		+transform(-50%, -50%)
+		box-shadow: 0 3px 24px rgba(#9b9b9b, .25)
+		border-radius: 5px
+		background: #fff
+	&:before
+		width: 98%
+		height: 116%
+	&:after
+		width: 94.5%
+		height: 134%
+	.h5
+		margin-bottom: 30px
+	.form-control
+		padding: 17px 20px
+		font-size: .875em
+	.agreement
+		.checkbox
+			font-size: .75em
 			
 .form-control
 	display: block
@@ -941,7 +1021,7 @@ p
 label
 	font-weight: 600
 	margin-bottom: .1rem
-	display: block
+	display: inline-block
 	&.checkbox
 		font-weight: normal
 	sup
@@ -992,7 +1072,7 @@ blockquote
 		flex: 1 1 auto
 textarea
 	resize: none
-	height: 230px
+	height: 228px
 
 // POP-UP//
 
