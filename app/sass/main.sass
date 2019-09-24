@@ -59,6 +59,10 @@ button
 p
 	line-height: 1.2
 	//font-size: 1.0625em
+	&.intro
+		font-size: 1.25em
+		max-width: 740px
+		margin: -35px auto 2.5em
 .text-center
 	text-align: center
 .heading-line
@@ -446,7 +450,7 @@ p
 	background-size: auto 92%
 	background-position: right 70% center
 	&.visible
-		background-image: url(../img/production_bg.png)
+		//background-image: url(../img/production_bg.png)
 	.grid
 		>div
 			grid-column-start: 2
@@ -644,6 +648,50 @@ p
 			transition: $trans3
 		.btn
 			font-size: .875em
+
+.shema-wrap
+	position: relative
+	img
+		margin: 0 auto
+	.pointer
+		font-size: 1.25em
+		line-height: 1.2
+		position: absolute
+		padding: 0 20px
+		i
+			display: block
+			position: absolute
+			top: 50%
+			width: 100%
+			height: 3px
+			background: lighten($accent, 30%)
+			&:before
+				content: ''
+				position: absolute
+				width: 8px
+				height: 8px
+				border-radius: 50%
+				background: inherit
+				top: 50%
+				margin-top: -4px
+		&.left
+			left: 50%
+			margin-left: -480px
+			i
+				left: 100%
+				transform-origin: left
+				&:before
+					left: 100%
+		
+		strong
+			display: block
+			font-size: 1.2em
+			text-transform: uppercase
+		&:nth-child(1)
+			top: 50px
+			i
+				transform: rotate(-22deg)
+
 			
 .map
 	height: 560px
