@@ -16,14 +16,29 @@ document.addEventListener("DOMContentLoaded", function() {
 	
 	$('.reviews .owl-carousel').owlCarousel({
 		items:1,
-		margin: 96,
 		loop: true,
 		center: true,
-		stagePadding: 550,
-		nav: true,
+		nav: false,
 		navText: ['<span class="arrow-left-lg"></span>','<span class="arrow-right-lg"></span>'],
 		//autoplay: true,
-		//autoplayTimeout:1500
+		autoplayTimeout:2500,
+		smartSpeed:1000,
+		responsiveClass:true,
+		responsive:{
+			0:{},
+			600:{},
+			1200:{
+				items:1,
+				margin: 20,
+				nav: true,
+			},
+			1600:{
+				stagePadding: 550,
+				items:1,
+				margin: 96,
+				nav: true,
+			}
+		}
 	})
 
 	$('.zoom-gallery').magnificPopup({
