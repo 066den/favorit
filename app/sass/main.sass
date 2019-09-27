@@ -45,6 +45,9 @@ h2,.h2
 	margin-bottom: 1em
 	+media-breakpoint-down(lg)
 		font-size: 1.9em
+	+media-breakpoint-down(lg)
+		font-size: 1.8em
+	
 h4,.h4
 	font-size: 1.5em
 
@@ -99,10 +102,19 @@ p
 .container-fluid
 	width: 100%
 .container
-	max-width: 1170px		
+	width: 100%
 	margin:
 		left: auto
 		right: auto
+	+media-breakpoint-down(lg)
+	+media-breakpoint-up(sm)
+		max-width: 540px
+	+media-breakpoint-up(md)
+		max-width: 720px
+	+media-breakpoint-up(lg)
+		max-width: 970px
+	+media-breakpoint-up(xl)
+		max-width: 1170px
 .img-responsive
 	display: block
 	max-width: 100%
@@ -440,6 +452,11 @@ p
 		.spec-icon
 			&.door
 				background-position: -607px 0
+			&.rule
+				background-position: -662px 0
+		+media-breakpoint-down(md)
+			min-width: 120px
+			font-size: .95em
 	.spec-icon
 		background-position: 3px 0
 	.title
@@ -522,6 +539,16 @@ p
 	.spec-icon
 		height: 61px
 		background-position: -295px 0
+	&.potolok
+		.spec-icon
+			background-position: -703px 0
+		li
+			&:nth-child(2)
+				.spec-icon
+					background-position: -762px 0
+			&:nth-child(3)
+				.spec-icon
+					background-position: -817px 0
 .brands
 	.grid
 		align-items: center
@@ -712,6 +739,8 @@ p
 			font-size: .875em
 
 .goods
+	.gtod
+		row-gap: 65px
 	.item
 		text-align: center
 		position: relative
@@ -720,6 +749,8 @@ p
 		margin-bottom: 30px
 	.thumb
 		min-height: 330px
+		border-radius: 5px
+		overflow: hidden
 		img
 			margin: 0 auto
 	.product-label
@@ -777,7 +808,6 @@ p
 			bottom: 50px
 			i
 				transform: rotate(15deg)
-			
 	.right
 		left: 50%
 		margin-left: 250px
@@ -794,12 +824,67 @@ p
 		&:nth-of-type(2)
 			top: 50%
 			margin-top: -20px
-
+	&.shema-balkon
+		.left
+			margin-left: -510px
+			&:nth-of-type(2)
+				margin-top: -70px
+			&:nth-of-type(3)
+				i
+					transform: rotate(-42deg)
+		.right
+			&:nth-of-type(1)
+				i
+					width: 72%
+			&:nth-of-type(2)
+				margin-top: -70px
+				i
+					transform: rotate(16deg)
+					width: 125%
 	strong
 		display: block
 		font-size: 1.2em
 		text-transform: uppercase
 
+.selection
+	.nav-tab
+		display: flex
+		border-radius: 10px
+		border: 1px	solid $accent-line
+		overflow: hidden
+		li
+			width: 100%
+			&:not(:last-child)
+				border-right: 1px solid $accent-line
+			a
+				display: block
+				color: $text
+				font-weight: bold
+				font-size: 1.25em
+				text-align: center
+				padding: 22px 0
+				background: #fff
+				&:hover, &.active
+					color: #fff
+					background: $accent
+					text-decoration: none
+	.specific
+		ul
+			display: flex
+			li
+				width: 100%
+				text-align: center
+		a
+			display: inline-block
+			color: $text
+			font-size: .875em
+			text-transform: uppercase
+			font-weight: bold
+			&:hover
+				text-decoration: none
+		img
+			margin: 0 auto
+			border-radius: 50%
 			
 .map
 	height: 560px
