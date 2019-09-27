@@ -76,6 +76,10 @@ document.addEventListener("DOMContentLoaded", function() {
 		}
 	});
 
+	$('.selection a').on('click', function() {
+		$(this).parent('li').addClass('active').siblings().removeClass('active');
+	})
+
 	$(window).scroll(function(){
 		var topHeight = $('.header').height();
 		if($(window).scrollTop() > topHeight) {

@@ -856,6 +856,11 @@ p
 			width: 100%
 			&:not(:last-child)
 				border-right: 1px solid $accent-line
+			&.active
+				a
+					color: #fff
+					background: $accent
+					text-decoration: none
 			a
 				display: block
 				color: $text
@@ -864,16 +869,35 @@ p
 				text-align: center
 				padding: 22px 0
 				background: #fff
-				&:hover, &.active
-					color: #fff
-					background: $accent
+				&:hover
+					//color: #fff
+					//background: $accent
 					text-decoration: none
+			span
+				display: block
+				font-size: .7em
+				font-weight: normal
+				line-height: 1.2
+	.tab-content
+		border: 1px solid $accent-line
+		border-top: none
+		margin-top: -10px
+		border-radius: 0 0 10px 10px
+		position: relative
+	.tab-pane
+		padding: 60px 20px
 	.specific
+		margin-bottom: 90px
 		ul
 			display: flex
 			li
 				width: 100%
 				text-align: center
+				&.active
+					img
+						box-shadow: 0 0px 24px rgba(#000, .6)
+					a
+						color: $accent
 		a
 			display: inline-block
 			color: $text
@@ -885,7 +909,47 @@ p
 		img
 			margin: 0 auto
 			border-radius: 50%
-			
+			margin-bottom: 20px
+			transition: $trans3
+	.additional
+		padding-left: 40px
+		max-width: 600px
+		.title
+			font-size: 1.25em
+			font-weight: bold
+			text-transform: uppercase
+			margin-bottom: 10px
+	.color
+		.title
+			margin-bottom: 35px
+		li
+			&:not(:last-child)
+				margin-right: 12px
+			&.active
+				a
+					transform: scale(1.1)
+					box-shadow: 0 0px 10px rgba(#000, .8)
+		a
+			display: inline-block
+			width: 24px
+			height: 24px
+			border-radius: 50%
+	.btn.btn-default
+		position: absolute
+		right: 50px
+		bottom: 60px
+	&.balkon
+		.specific
+			img
+				border-radius: 0
+			.title
+				display: inline-block
+				max-width: 130px
+				line-height: 1.2
+	label
+		&.checkbox
+			font-weight: bold
+
 .map
 	height: 560px
 	position: relative
@@ -983,13 +1047,13 @@ p
 		color: $text
 	&:active
 		background-color: darken($accent2, 5%)
-		top: 3px
+		margin-bottom: 3px
 		&:after
 			box-shadow: 0 0px 0 #DBBC2A
 	+ .btn
-		margin-Top: 10px
+		margin-left: 10px
 	+ .btn-sky
-		margin-Top: 10px
+		margin-left: 10px
 	&.btn-lg
 		font-size: 1.25em
 		padding: 18px 30px
@@ -1101,6 +1165,7 @@ p
 		transform: rotate(60deg) translate3d(10px,16px,0)
 	&:after
 		transform: rotate(-60deg) translate3d(10px,-16px,0)
+
 //FORM//
 
 .triple
