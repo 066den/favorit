@@ -39,14 +39,20 @@ h1,.h1
 	text-transform: uppercase
 	+media-breakpoint-down(xl)
 		font-size: 2.125em
-
+	+media-breakpoint-down(md)
+		font-size: 1.8em
+	+media-breakpoint-down(sm)
+		font-size: 1.6em
+	
 h2,.h2
 	font-size: 2.25em
 	margin-bottom: 1em
 	+media-breakpoint-down(lg)
-		font-size: 1.9em
-	+media-breakpoint-down(lg)
 		font-size: 1.8em
+	+media-breakpoint-down(md)
+		font-size: 1.6em
+	+media-breakpoint-down(sm)
+		font-size: 1.5em
 	
 h4,.h4
 	font-size: 1.5em
@@ -69,6 +75,8 @@ p
 		font-size: 1.25em
 		max-width: 740px
 		margin: -35px auto 2.5em
+		+media-breakpoint-down(sm)
+			font-size: 1em
 .text-center
 	text-align: center
 .heading-line
@@ -152,6 +160,13 @@ p
 	&.gap-40
 		grid-gap: 40px
 	
+	+media-breakpoint-down(md)
+		&.col-4-auto, &.col-3-auto
+			grid-template-columns: repeat(2, 1fr)
+	+media-breakpoint-down(sm)
+		&.col-1-2
+			display: block
+
 	+media-breakpoint-down(xs)
 		display: block
 		> div
@@ -200,6 +215,8 @@ p
 	box-shadow: inset 0 -1px 0 #EAEAEA
 	padding: 22px 0
 	z-index: 99
+	+media-breakpoint-down(md)
+		font-size: .8em
 	.logo
 		width: 31%
 		a
@@ -224,7 +241,20 @@ p
 		.contact
 			width: 26%
 		.address
-			width: 16%
+			width: 20%
+	+media-breakpoint-down(md)
+		.phone
+			a
+				font-size: 1.1em
+	+media-breakpoint-down(sm)
+		padding: 10px 0
+		.phone
+			a
+				font-size: 1em
+		.contact
+			width: 28%
+		.address
+			width: 21%
 
 .top-line
 	font-style: italic
@@ -248,7 +278,7 @@ p
 		height: 30px
 		background-image: url(../img/icon-sprite.png)
 		background-repeat: no-repeat
-		background-size: cover
+		background-size: auto 100%
 	&.address
 		&:before
 			background-position: -34px 0
@@ -258,6 +288,16 @@ p
 	&.time
 		&:before
 			background-position: -101px 0
+	+media-breakpoint-down(md)
+		padding-left: 35px
+	+media-breakpoint-down(sm)
+		padding-left: 23px
+		&:before
+			width: 22px
+			height: 20px
+		&.address
+			&:before
+				background-position: -43px 0	
 .icon-box
 	position: absolute
 	right: 50px
@@ -266,6 +306,9 @@ p
 	z-index: 10
 	+media-breakpoint-down(lg)
 		bottom: 70px
+	+media-breakpoint-down(sm)
+		bottom: 160px
+	
 .icon-circle
 	border-radius: 100%
 	background: #399BE0
@@ -293,8 +336,21 @@ p
 		background-image: url(../img/header-sprite.png)
 		background-repeat: no-repeat
 		margin-bottom: 10px
+		background-size: cover
 	&+.icon-circle
 		margin-left: 25px
+	+media-breakpoint-down(sm)
+		width: 90px
+		height: 90px
+		padding: 10px
+		font-size: .78em
+		.ico
+			width: 30px
+			height: 30px
+			margin-bottom: 2px
+		&.gauge
+			.ico
+				background-position: -31px 0
 
 .navbar
 	position: absolute
@@ -309,6 +365,8 @@ p
 		list-style-type: none
 		margin-bottom: 0
 		padding-left: 0
+	+media-breakpoint-down(md)
+		display: none
 .navbar-nav
 	>li
 		display: inline-block
@@ -391,7 +449,6 @@ p
 //SLIDER//
 .main-slider
 	position: relative
-	margin-bottom: 70px
 	.item
 		position: relative
 	.item-content
@@ -425,6 +482,22 @@ p
 			padding: 20px
 		+media-breakpoint-down(lg)
 			margin-bottom: -100px
+	&+.section
+		padding-top: 130px
+	+media-breakpoint-down(md)
+		.item-content
+			padding-top: 2%
+		.description
+			font-size: 1em
+		&+.section
+			padding-top: 150px
+	+media-breakpoint-down(sm)
+		.advantages
+			position: relative
+		.item-content
+			.btn-lg
+				min-width: 260px
+				padding: 15px 20px
 .spec-icon
 	width: 60px
 	margin: 0 auto 18px
@@ -454,9 +527,6 @@ p
 				background-position: -607px 0
 			&.rule
 				background-position: -662px 0
-		+media-breakpoint-down(md)
-			min-width: 120px
-			font-size: .95em
 	.spec-icon
 		background-position: 3px 0
 	.title
@@ -487,12 +557,24 @@ p
 					background-position: -400px 0
 			&:nth-child(even)
 				margin-top: 120px
-			
+	+media-breakpoint-down(md)
+		.item
+			min-width: 120px
+			font-size: .95em
+	+media-breakpoint-down(sm)
+		.item
+			min-width: 80px
+			font-size: .78em
+
 //CONTENT//
 .content-wrapper
 	padding-top: 54px
+	+media-breakpoint-down(md)
+		padding-top: 0
 .section
 	padding: 60px 0
+	+media-breakpoint-down(sm)
+		padding: 30px 0
 .services
 	.grid
 		grid-gap: 30px
@@ -526,6 +608,8 @@ p
 		.grid
 			>div
 				grid-column-start: 1
+		+media-breakpoint-down(md)
+			background-position: right center
 	li
 		max-width: 150px
 		line-height: 1.2
@@ -549,6 +633,15 @@ p
 			&:nth-child(3)
 				.spec-icon
 					background-position: -817px 0
+	+media-breakpoint-down(md)
+		background-position: left center
+		background-size: auto 65%
+		.title
+			font-size: .8em
+	+media-breakpoint-down(sm)
+		.grid
+			display: block
+		background: none !important
 .brands
 	.grid
 		align-items: center
@@ -556,6 +649,11 @@ p
 		margin-bottom: 0
 		span
 			color: $accent
+	+media-breakpoint-down(sm)
+		.grid
+			display: block
+		.h2
+			margin-bottom: 20px
 .brand-list
 	padding: 0 10px 0 30px
 	.item
@@ -563,6 +661,8 @@ p
 		padding: 15px
 		.owl-dots
 			padding-top: 15px
+	+media-breakpoint-down(sm)
+		padding: 0
 .owl-carousel
 	&.carousel
 		.owl-dots
@@ -632,6 +732,19 @@ p
 						&:before, &:after
 							background: $accent
 							opacity: 1
+	+media-breakpoint-down(sm)
+		.avatar
+			width: 80px
+			height: 80px
+		.user-icon
+			width: 35%
+			font-size: .85em
+		.review
+			padding: 0 20px
+		.org
+			margin-bottom: 15px
+		p
+			font-size: .85em
 
 .zoom-gallery
 	padding: 40px 25px 0
@@ -739,7 +852,7 @@ p
 			font-size: .875em
 
 .goods
-	.gtod
+	.grid
 		row-gap: 65px
 	.item
 		text-align: center
@@ -762,6 +875,9 @@ p
 		font-family: $heading-font
 		font-weight: bold
 		padding: 10px 15px
+	+media-breakpoint-down(sm)
+		.thumb
+			min-height: 240px
 .shema-wrap
 	position: relative
 	margin-bottom: 70px
@@ -830,8 +946,12 @@ p
 			&:nth-of-type(2)
 				margin-top: -70px
 			&:nth-of-type(3)
+				+media-breakpoint-down(md)
+					bottom: 65px
 				i
 					transform: rotate(-42deg)
+			+media-breakpoint-down(md)
+				margin-left: -365px
 		.right
 			&:nth-of-type(1)
 				i
@@ -841,11 +961,34 @@ p
 				i
 					transform: rotate(16deg)
 					width: 125%
+					+media-breakpoint-down(md)
+						transform: rotate(13deg)
+						width: 140%
 	strong
 		display: block
 		font-size: 1.2em
 		text-transform: uppercase
-
+	
+	+media-breakpoint-down(md)
+		.pointer
+			font-size: .8em
+		img
+			width: 60%
+		.right
+			margin-left: 210px
+			&:nth-of-type(2)
+				margin-top: 0px
+		.left
+			margin-left: -370px
+			&:nth-of-type(1)
+				top: 25px
+	+media-breakpoint-down(sm)
+		img
+			width: 50%
+		.left
+			margin-left: -280px
+		.right
+			margin-left: 125px
 .selection
 	.nav-tab
 		display: flex
@@ -868,6 +1011,7 @@ p
 				font-size: 1.25em
 				text-align: center
 				padding: 22px 0
+				min-height: 100%
 				background: #fff
 				&:hover
 					//color: #fff
@@ -890,14 +1034,17 @@ p
 		margin-bottom: 90px
 		ul
 			display: flex
+			flex-wrap: wrap
+			justify-content: space-around
 			li
-				width: 100%
 				text-align: center
 				&.active
 					img
 						box-shadow: 0 0px 24px rgba(#000, .6)
 					a
 						color: $accent
+				+media-breakpoint-down(md)
+					padding: 10px
 		a
 			display: inline-block
 			color: $text
@@ -906,14 +1053,15 @@ p
 			font-weight: bold
 			&:hover
 				text-decoration: none
+			+media-breakpoint-down(md)
+				font-size: .7em
 		img
-			margin: 0 auto
+			margin: 0 auto 20px
 			border-radius: 50%
-			margin-bottom: 20px
 			transition: $trans3
 	.additional
 		padding-left: 40px
-		max-width: 600px
+		max-width: 50%
 		.title
 			font-size: 1.25em
 			font-weight: bold
@@ -938,6 +1086,10 @@ p
 		position: absolute
 		right: 50px
 		bottom: 60px
+		+media-breakpoint-down(md)
+			position: relative
+			right: auto
+			bottom: auto
 	&.balkon
 		.specific
 			img
@@ -949,7 +1101,24 @@ p
 	label
 		&.checkbox
 			font-weight: bold
-
+	+media-breakpoint-down(md)
+		.specific
+			margin-bottom: 40px
+		.additional
+			padding-left: 10px
+			max-width: 100%
+			margin-bottom: 40px
+	+media-breakpoint-down(sm)
+		.nav-tab
+			li
+				a
+					font-size: 1.15em
+		.specific
+			ul
+				li
+					max-width: 25%
+			a
+				font-size: .6em
 .map
 	height: 560px
 	position: relative
@@ -981,7 +1150,23 @@ p
 			margin-left: -420px
 	#map-canvas
 		min-height: 100%
-
+	+media-breakpoint-down(md)
+		.contact-block
+			margin-left: -360px
+	+media-breakpoint-down(sm)
+		.contact-block
+			margin-left: -250px
+			.icon
+				&:before
+					height: 20px
+					width: 22px
+				&.address
+					&:before
+						background-position: -20px 0
+				&.email
+					&:before
+						background-position: -43px 0
+	
 .footer
 	padding: 25px 0
 	.copyright
@@ -1063,7 +1248,6 @@ p
 			border-radius: 10px
 		&:after
 			box-shadow: 0 5px 0 #DBBC2A
-
 	&.btn-block
 		display: block
 		width: 100%
@@ -1077,6 +1261,14 @@ p
 		font-weight: normal
 		&:hover
 			background: darken(#f9f9f9, 5%)
+	+media-breakpoint-down(md)
+		min-width: auto
+		&.btn-gray
+			padding: 15px
+	+media-breakpoint-down(sm)
+		&.btn-lg
+			font-size: 1em
+			padding: 15px 20px
 .btn-line
 	display: inline-block
 	color: #252525
@@ -1117,6 +1309,8 @@ p
 		right: 0
 		background: $arrow
 		border-radius: 3px
+	+media-breakpoint-down(sm)
+		display: none
 .arrow-right-tail
 	margin-right: 20px
 	&:before
@@ -1167,7 +1361,7 @@ p
 		transform: rotate(-60deg) translate3d(10px,-16px,0)
 
 //FORM//
-
+				
 .triple
 	box-shadow: 0 3px 24px rgba(#9b9b9b, .25)
 	border-radius: 5px
@@ -1200,7 +1394,9 @@ p
 	.agreement
 		.checkbox
 			font-size: .75em
-			
+	+media-breakpoint-down(md)
+		padding: 15px 40px
+		margin-bottom: 0		
 .form-control
 	display: block
 	width: 100%
@@ -1270,6 +1466,9 @@ label
 		left: 0
 		display: block
 		background: #fff
+	span
+		display: inline-block
+		line-height: 1.1
 blockquote
 	margin: 0 0 20px
 	font-size: 1.09em
@@ -1417,3 +1616,7 @@ textarea
 		.mfp-with-anim
 			+transform(0, -50px)
 			opacity: 0
+
++media-breakpoint-down(sm)
+	.button-call
+		//display: none

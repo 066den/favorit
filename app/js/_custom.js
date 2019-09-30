@@ -8,10 +8,16 @@ document.addEventListener("DOMContentLoaded", function() {
 
 	$('.brand-list .owl-carousel').owlCarousel({
 		items: 3,
-		margin: 48,
+		margin: 18,
 		loop: true,
 		autoplay: true,
-		autoplayTimeout:1500
+		autoplayTimeout:1500,
+		responsiveClass:true,
+		responsive:{
+			990:{
+				margin: 48,
+			},	
+		}
 	})
 	
 	$('.reviews .owl-carousel').owlCarousel({
