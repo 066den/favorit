@@ -82,9 +82,19 @@ document.addEventListener("DOMContentLoaded", function() {
 		}
 	});
 
-	$('.selection a').on('click', function() {
+	$('.selection label').on('click', function() {
 		$(this).parent('li').addClass('active').siblings().removeClass('active');
 	})
+
+	$('input.control').on('click', function(){
+		var control_el = $(this).parent().next();
+		if ($(this).is(':checked')){
+			$(control_el).removeClass('disabled');
+		} else {
+			$(control_el).addClass('disabled');
+	}
+
+});
 
 	$(window).scroll(function(){
 		var topHeight = $('.header').height();

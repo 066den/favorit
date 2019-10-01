@@ -43,6 +43,8 @@ h1,.h1
 		font-size: 1.8em
 	+media-breakpoint-down(sm)
 		font-size: 1.6em
+	+media-breakpoint-down(xs)
+		font-size: 1.5em
 	
 h2,.h2
 	font-size: 2.25em
@@ -498,6 +500,10 @@ p
 			.btn-lg
 				min-width: 260px
 				padding: 15px 20px
+	+media-breakpoint-down(xs)
+		.item-content
+			position: static
+			padding: 25px 0
 .spec-icon
 	width: 60px
 	margin: 0 auto 18px
@@ -565,7 +571,15 @@ p
 		.item
 			min-width: 80px
 			font-size: .78em
-
+	+media-breakpoint-down(xs)
+		.flex
+			flex-wrap: wrap
+		.item
+			margin-bottom: 15px
+		&.door
+			.item
+				&:nth-child(even)
+					margin-top: 0
 //CONTENT//
 .content-wrapper
 	padding-top: 54px
@@ -989,6 +1003,19 @@ p
 			margin-left: -280px
 		.right
 			margin-left: 125px
+	+media-breakpoint-down(xs)
+		img
+			width: 100%
+			opacity: .6
+		.left
+			margin-left: 0
+			left: 0
+		.right
+			margin-left: 0
+			right: 0
+		.pointer
+			i
+				display: none
 .selection
 	.nav-tab
 		display: flex
@@ -1000,28 +1027,25 @@ p
 			&:not(:last-child)
 				border-right: 1px solid $accent-line
 			&.active
-				a
+				label
 					color: #fff
 					background: $accent
-					text-decoration: none
-			a
-				display: block
-				color: $text
-				font-weight: bold
+			label
 				font-size: 1.25em
 				text-align: center
-				padding: 22px 0
+				padding: 22px 5px
 				min-height: 100%
 				background: #fff
-				&:hover
-					//color: #fff
-					//background: $accent
-					text-decoration: none
 			span
 				display: block
 				font-size: .7em
 				font-weight: normal
 				line-height: 1.2
+	label
+		display: block
+		font-weight: bold
+		cursor: pointer
+		transition: $trans3
 	.tab-content
 		border: 1px solid $accent-line
 		border-top: none
@@ -1041,18 +1065,15 @@ p
 				&.active
 					img
 						box-shadow: 0 0px 24px rgba(#000, .6)
-					a
+					label
 						color: $accent
 				+media-breakpoint-down(md)
 					padding: 10px
-		a
+		label
 			display: inline-block
 			color: $text
 			font-size: .875em
 			text-transform: uppercase
-			font-weight: bold
-			&:hover
-				text-decoration: none
 			+media-breakpoint-down(md)
 				font-size: .7em
 		img
@@ -1074,14 +1095,17 @@ p
 			&:not(:last-child)
 				margin-right: 12px
 			&.active
-				a
+				label
 					transform: scale(1.1)
 					box-shadow: 0 0px 10px rgba(#000, .8)
-		a
+		label
 			display: inline-block
 			width: 24px
 			height: 24px
 			border-radius: 50%
+		input
+			position: absolute
+			left: -999px
 	.btn.btn-default
 		position: absolute
 		right: 50px
@@ -1101,6 +1125,9 @@ p
 	label
 		&.checkbox
 			font-weight: bold
+	.disabled
+		pointer-events: none
+		opacity: .5
 	+media-breakpoint-down(md)
 		.specific
 			margin-bottom: 40px
@@ -1111,14 +1138,15 @@ p
 	+media-breakpoint-down(sm)
 		.nav-tab
 			li
-				a
+				label
 					font-size: 1.15em
 		.specific
 			ul
 				li
 					max-width: 25%
-			a
+			label
 				font-size: .6em
+
 .map
 	height: 560px
 	position: relative
@@ -1396,7 +1424,10 @@ p
 			font-size: .75em
 	+media-breakpoint-down(md)
 		padding: 15px 40px
-		margin-bottom: 0		
+		margin-bottom: 0
+	+media-breakpoint-down(xs)	
+		&:before, &:after
+			display: none
 .form-control
 	display: block
 	width: 100%
@@ -1422,7 +1453,7 @@ p
 	margin-top: 10px
 .form-group
 	position: relative
-	margin-bottom: 15px
+	margin-bottom: 15px !important
 	>span.error
 		position: absolute
 		line-height: 1
@@ -1485,6 +1516,9 @@ blockquote
 textarea
 	resize: none
 	height: 228px
+select
+	display: block
+	width: 100%
 
 // POP-UP//
 
