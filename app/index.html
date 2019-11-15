@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="ru">
-
 <head>
 	<meta charset="utf-8">
 	<title>Фаворит</title>
@@ -38,7 +37,12 @@
 				</div>
 			</div>
 		</div>
-		<nav class="navbar">
+		<nav id="navbar" class="navbar">
+			<div class="hamburger">
+  			<div class="hamburger-box">
+    			<div class="hamburger-inner"></div>
+  			</div>
+			</div>
 			<div class="container">
 				<ul class="navbar-nav">
 					<li class="active"><a href="#">Главная</a></li>
@@ -70,6 +74,18 @@
 					<img alt="" class="lazy img-responsive example-img" src="data:image/gif;base64,R0lGODlhBwACAIAAAP///wAAACH5BAEAAAEALAAAAAAHAAIAAAIDjI9YADs="
 					data-src="img/@2x/slide-1.jpg"
 					data-srcset="img/@1x/slide-1.jpg 1x, img/@2x/slide-1.jpg 2x">
+					<div class="item-content">
+						<div class="container">
+							<div class="h1">Пластиковые окна <br> и натяжные потолки</div>
+							<div class="description">Расчитайте стоимость окон по вашим<br> параметрам всего за 3 минуты!</div>
+							<div class="btn btn-default btn-lg"><span>Рассчитать стоимость</span></div>
+						</div>
+					</div>
+				</div>
+				<div class="item">
+					<img alt="" class="lazy img-responsive example-img" src="data:image/gif;base64,R0lGODlhBwACAIAAAP///wAAACH5BAEAAAEALAAAAAAHAAIAAAIDjI9YADs="
+					data-src="img/@2x/slide-okna.jpg"
+					data-srcset="img/@1x/slide-okna.jpg 1x, img/@2x/slide-okna.jpg 2x">
 					<div class="item-content">
 						<div class="container">
 							<div class="h1">Пластиковые окна <br> и натяжные потолки</div>
@@ -113,108 +129,105 @@
 			</div>
 		</div>
 
-		<div class="section selection balkon bg-gray">
+		<div id="calculator" class="section selection balkon bg-gray">
 			<div class="container">
       	<h2 class="h2 heading-line">Расчитайте стоимость своего балкона</h2>
-    		<ul class="list-inline nav-tab">
+    		<ul id="glazing" class="list-inline nav-tab">
 					<li  class="active">
 						<label>Холодное остекление
 							<span>Холодное остекление - установка алюминиевого профиля. <br>Створки раздвижные, но могут быть установлены и поворотные. <br> Такое остекление отличается прочностью и долговечностью.</span>
+							<input type="radio" name="glazing" value="view_cold" checked>
 						</label>
 					</li>
 					<li>
 						<label>Тёплое остекление
 							<span>Тёплое остекление - установка ПВХ-профиля.<br>Створки поворотные, но могут быть поставлены поворотно-откидные.<br>Из балкона получается дополнительная комната отдыха или мастерская.</span>
+							<input type="radio" name="glazing" value="view_hot">
 						</label>
 					</li>
 				</ul>
-				<div class="tab-content">
+				<div id="data_calc" class="tab-content">
 					<div class="tab-pane">
-						<div class="specific">
+						<div id="view" class="specific">
 							<ul class="list-inline">
+								<li class="active">
+									<label>
+										<img class="lazy img-responsive"	src="data:image/gif;base64,R0lGODlhBwACAIAAAP///wAAACH5BAEAAAEALAAAAAAHAAIAAAIDjI9YADs=" data-src="img/@1x/lodgiya3.jpg" data-srcset="img/@2x/lodgiya3.jpg" alt="">
+										<span class="title">Прямая Лоджия 3м</span>
+										<input type="radio" name="view_cold" value="16600" checked>
+										<input type="hidden" name="view_hot" value="23200">
+									</label>
+								</li>
 								<li>
 									<label>
-										<img class="lazy img-responsive"	src="data:image/gif;base64,R0lGODlhBwACAIAAAP///wAAACH5BAEAAAEALAAAAAAHAAIAAAIDjI9YADs=" data-src="img/@1x/odnourovneviy.jpg" data-srcset="img/@2x/odnourovneviy.jpg 1x" alt="">
+										<img class="lazy img-responsive"	src="data:image/gif;base64,R0lGODlhBwACAIAAAP///wAAACH5BAEAAAEALAAAAAAHAAIAAAIDjI9YADs=" data-src="img/@1x/lodgia6.jpg" data-srcset="img/@2x/lodgia6.jpg" alt="">
+										<span class="title">Прямая Лоджия 6м</span>
+										<input type="radio" name="view_cold" value="30700">
+										<input type="hidden" name="view_hot" value="40900">
+									</label>
+								</li>
+								<li>
+									<label>
+										<img class="lazy img-responsive"	src="data:image/gif;base64,R0lGODlhBwACAIAAAP///wAAACH5BAEAAAEALAAAAAAHAAIAAAIDjI9YADs=" data-src="img/@1x/balkon3.jpg" data-srcset="img/@2x/balkon3.jpg" alt="">
 										<span class="title">П-образный балкон 3м</span>
+										<input type="radio" name="view_cold" value="26300">
+										<input type="hidden" name="view_hot" value="34400">
 									</label>
 								</li>
 								<li>
 									<label>
-										<img class="lazy img-responsive"	src="data:image/gif;base64,R0lGODlhBwACAIAAAP///wAAACH5BAEAAAEALAAAAAAHAAIAAAIDjI9YADs=" data-src="img/@1x/mnogourovneviy.jpg" data-srcset="img/@2x/mnogourovneviy.jpg 1x" alt="">
-										<span class="title">Закругленный П-образный балкон 3м</span>
-									</label>
-								</li>
-								<li>
-									<label>
-										<img class="lazy img-responsive"	src="data:image/gif;base64,R0lGODlhBwACAIAAAP///wAAACH5BAEAAAEALAAAAAAHAAIAAAIDjI9YADs=" data-src="img/@1x/volna.jpg" data-srcset="img/@2x/volna.jpg 1x" alt="">
-										<span class="title">Г-образный балкон 3м</span>
-									</label>
-								</li>
-								<li>
-									<label>
-										<img class="lazy img-responsive"	src="data:image/gif;base64,R0lGODlhBwACAIAAAP///wAAACH5BAEAAAEALAAAAAAHAAIAAAIDjI9YADs=" data-src="img/@1x/konus.jpg" data-srcset="img/@2x/konus.jpg 1x" alt="">
-										<span class="title">Закругленный Г-образный балкон 3м</span>
-									</label>
-								</li>
-								<li>
-									<label>
-										<img class="lazy img-responsive"	src="data:image/gif;base64,R0lGODlhBwACAIAAAP///wAAACH5BAEAAAEALAAAAAAHAAIAAAIDjI9YADs=" data-src="img/@1x/arka.jpg" data-srcset="img/@2x/arka.jpg 1x" alt="">
-										<span class="title">Лоджия 3м</span>
+										<img class="lazy img-responsive"	src="data:image/gif;base64,R0lGODlhBwACAIAAAP///wAAACH5BAEAAAEALAAAAAAHAAIAAAIDjI9YADs=" data-src="img/@1x/balkon6.jpg" data-srcset="img/@2x/balkon6.jpg" alt="">
+										<span class="title">П-образный балкон 6м</span>
+										<input type="radio" name="view_cold" value="40100">
+										<input type="hidden" name="view_hot" value="48700">
 									</label>
 								</li>
 							</ul>
 						</div>
-						<div class="additional">
-							<div class="title">Внешняя отделка:</div>
-							<div class="grid col-1-1 form-group">
-								<label class="checkbox"><input type="checkbox" name="noname" class="control"><i></i>Профнастил</label>
-								<select class="disabled" name="">
-									<option value="" disabled selected>Выбрать</option>
-									<option value="">Белый</option>
-									<option value="">Чёрный</option>
-									<option value="">Красный</option>
-								</select>
-							</div>
-											
-							<div class="title">Внутренняя отделка:</div>
-							<div class="form-group">
-								<label class="checkbox"><input type="checkbox" name="Пол(доска)"><i></i>Пол доска</label>
-							</div>
-							<div class="form-group">
-								<label class="checkbox form-group"><input type="checkbox" class="control" name="Обшивка вагонкой"><i></i>Обшивка вагонкой</label>
-								<div class="color disabled">
-									<ul class="list-inline">
-										<li><label title="#FFF707" style="background-color: #FFF707"><input type="checkbox"></label></li>
-										<li><label title="#DB0D00" style="background-color: #DB0D00"></label></li>
-										<li><label title="#DB7C00" style="background-color: #DB7C00"></label></li>
-										<li><label title="#A3DB00" style="background-color: #A3DB00"></label></li>
-										<li><label title="#35DB2B" style="background-color: #35DB2B"></label></li>
-										<li><label title="#3CC5E1" style="background-color: #3CC5E1"></label></li>
-										<li><label title="#0019DB" style="background-color: #0019DB"></label></li>
-										<li><label title="#6A00DB" style="background-color: #6A00DB"></label></li>
-										<li><label title="#D400DB" style="background-color: #D400DB"></label></li>
-										<li><label title="#DB085F" style="background-color: #DB085F"></label></li>
-										<li><label title="#964C6B" style="background-color: #964C6B"></label></li>
-										<li><label title="#CDCDCD" style="background-color: #CDCDCD"></label></li>
-									</ul>
+						<div class="additional grid col-1-1">
+							<div class="data-calc">
+								<div class="title">Внешняя отделка:</div>
+								<div class="form-group">
+									<label class="checkbox"><input type="checkbox" name="external" value="[3850,8100,7200,10550]" class="control"><i></i>Виниловый сайдинг</label>
+								</div>
+								<div class="title">Внутренняя отделка:</div>
+								<div class="form-group">
+									<label>Пол:</label>
+									<label class="checkbox"><input type="checkbox" name="floor" value="[4100,8000,4100,8000]"><i></i>Шпунтованная доска</label>
+									<label class="checkbox"><input type="checkbox" name="floor" value="[3500,7000,3500,7000]"><i></i>Линолеум <small>без расчёта стоимости линолеума</small></label>
+								</div>
+								<div class="form-group">
+									<label>Потолок:</label>
+									<label class="checkbox"><input type="checkbox" name="ceiling" value="[2800,5300,2800,5300]"><i></i>Евровагонка</label>
+									<label class="checkbox"><input type="checkbox" name="ceiling" value="[2000,4000,2000,4000]"><i></i>Панель ПВХ</label>
+								</div>
+								<div class="form-group">
+									<label>Стены:</label>
+									<label class="checkbox"><input type="checkbox" name="walls" value="[11800,23650,13800,25650]"><i></i>Евровагонка</label>
+									<label class="checkbox"><input type="checkbox" name="walls" value="[9650,19250,11300,20900]"><i></i>Панель ПВХ</label>
 								</div>
 							</div>
+
+							<div class="result-calc flex">
+								<div class="title">Примерная цена:</div>
+								<div class="h1"><span id="price"></span> <small>р.</small></div>
+								<p>стоимость рассчитана <b>"под ключ"</b>, включая доставку, демонтаж, монтаж, установку козырьков, отливов и подоконников.</p>
+							</div>
 						</div>
-						<button class="btn btn-default btn-lg"><span>Расчитать стоимость</span><span class="arrow-right-longtail"></span></button>
+						<!-- <button class="btn btn-default btn-lg"><span>Расчитать стоимость</span><span class="arrow-right-longtail"></span></button> -->
 					</div>
 				</div>
 			</div>
 		</div>
 
-		
 		<div class="section selection bg-gray">
 			<div class="container">
       	<h2 class="h2 heading-line">Соберите свой потолок!<br>А мы его рассчитаем</h2>
     		<ul class="list-inline nav-tab">
-					<li  class="active"><label>Матовый</a>l<bel/li>
+					<li  class="active"><label>Матовый</label></li>
 					<li><label>Глянцевый</label></li>
 					<li><label>Сатиновый</label></li>
-					<li><label>Тканевый</al>bel</li>
+					<li><label>Тканевый</label></li>
 				</ul>
 				<!-- <div class="tab-content">
 					<div class="tab-pane">
@@ -331,14 +344,22 @@
 			<div class="container">
 				<h2 class="h2 heading-line">Пластиковые окна &laquo;под ключ&raquo;</h2>
 				<p class="intro text-center">Мы предлагаем полный комплекс работ по установке окон с отделкой «под ключ» в Москве. Окна без лишних опций легко подобрать с нашим консультантом и сделать заказ еще дешевле.</p>
-				<div class="shema-wrap">
-					<img src="data:image/gif;base64,R0lGODlhBwACAIAAAP///wAAACH5BAEAAAEALAAAAAAHAAIAAAIDjI9YADs=" data-src="img/shema.png" data-srcset="img/shema.png" alt="" class="lazy img-responsive">
-					<div class="pointer left"><strong>откосы</strong>от 700 руб.<i></i></div>
-					<div class="pointer left"><strong>Фурнитура</strong>от 700 руб.<i></i></div>
-					<div class="pointer left"><strong>Подоконник</strong>от 700 руб.<i></i></div>
-					<span class="pointer right"><strong>Стеклопакет</strong>от 700 руб.<i></i></span>
-					<span class="pointer right"><strong>Ручка</strong>от 700 руб.<i></i></span>
+				<div class="shema-wrap shema-balkon">
+				<img src="data:image/gif;base64,R0lGODlhBwACAIAAAP///wAAACH5BAEAAAEALAAAAAAHAAIAAAIDjI9YADs=" data-src="img/shema-balkon.jpg" data-srcset="img/shema-balkon.jpg" alt="" class="lazy img-responsive">
+					<div class="pointer left"><strong>ЗАСТЕКЛЕНИЕ</strong><i></i></div>
+					<div class="pointer left"><strong>наружная отделка</strong><i></i></div>
+					<div class="pointer left"><strong>Утепление</strong><i></i></div>
+					<span class="pointer right"><strong>Внутренняя отделка стен</strong><i></i></span>
+					<span class="pointer right"><strong>Внутренняя отделка пола</strong><i></i></span>
 				</div>
+				<div class="description">
+					<p><strong>Профиль:</strong> немецкий профиль Rehau или его полный аналог профиль Melke. Полная линейка профилей от эконом до премиум класса. Белые, окрашенные в любой цвет по RAL либо ламинированные под дерево. Устанавливаем также деревянные окна.</p>
+					<p><strong>Фурнитура:</strong> немецкая фурнитура Roto NT или Sigenia.</p>
+					<p><strong>Подоконник:</strong> стандартный подоконник "Витраж" либо премиум подоконники "Crystallit", "Danke" и "Moeler". Белые, окрашенные в любой цвет по RAL либо ламинированные под дерево.</p>
+					<p><strong>Стеклопакет:</strong> любые виды стеклопакетов, от стандартных энергосберегающих и теплопакетов, до тонированных, декорированных внутри шпросами или противоударных.</p>
+					<p><strong>Ручка:</strong> Hoppe, RotoLine, RotoSwing. Большой выбор цветов.</p>
+				</div>
+				
 				<div class="triple">
 					<form action="#" class="form">
 						<h5 class="h5 text-center">Оставьте заявку и наши менеджеры проконсультируют вас!</h5>
@@ -429,6 +450,15 @@
 								<div class="title text-center"><strong>Проверка и испытания</strong></div>
 							</li>
 						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="section gallery">
+			<div class="container">
+				<div class="owl-carousel">
+					<div class="item">
+						
 					</div>
 				</div>
 			</div>

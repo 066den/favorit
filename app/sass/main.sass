@@ -171,9 +171,9 @@ p
 
 	+media-breakpoint-down(xs)
 		display: block
-		> div
-			padding: $gutter/2 0
-
+		>div, >a
+			padding-bottom: $gutter
+		
 .flex
 	display: flex
 	&.jcsb
@@ -209,7 +209,23 @@ p
 		box-shadow: 0 0 0 20px rgba(#399BE0, 0)
 	100%
 		box-shadow: 0 0 0 0 rgba(#399BE0, 0)
-
+@keyframes rotate
+	0% 
+		transform: rotate(0deg)
+	4% 
+		transform: rotate(-45deg)
+	8% 
+		transform: rotate(0deg)
+	12% 
+		transform: rotate(-45deg)
+	16% 
+		transform: rotate(0deg)
+	20% 
+		transform: rotate(-45deg)
+	24% 
+		transform: rotate(0deg)
+	100% 
+		transform: rotate(0deg)
 //HEADER//
 .header
 	position: relative
@@ -257,6 +273,13 @@ p
 			width: 28%
 		.address
 			width: 21%
+	+media-breakpoint-down(xs)
+		.flex
+			flex-wrap: wrap
+		.logo
+			width: 45%
+		.contact, .address
+			width: auto		
 
 .top-line
 	font-style: italic
@@ -310,6 +333,10 @@ p
 		bottom: 70px
 	+media-breakpoint-down(sm)
 		bottom: 160px
+	+media-breakpoint-down(xs)
+		bottom: auto
+		top: 70px
+		right: 20px
 	
 .icon-circle
 	border-radius: 100%
@@ -331,6 +358,7 @@ p
 		animation: pulse-white 2s infinite
 		.ico
 			background-position: -45px 0
+			animation: rotate 3s infinite 
 	.ico
 		display: inline-block
 		width: 44px
@@ -353,7 +381,13 @@ p
 		&.gauge
 			.ico
 				background-position: -31px 0
-
+	+media-breakpoint-down(xs)
+		width: 50px
+		height: 50px
+		span:last-child
+			display: none
+		&+.icon-circle
+			margin-left: 15px
 .navbar
 	position: absolute
 	top: 100%
@@ -368,7 +402,16 @@ p
 		margin-bottom: 0
 		padding-left: 0
 	+media-breakpoint-down(md)
-		display: none
+		.navbar-nav
+			position: absolute
+			left: 60px
+			background: #fff
+			width: 320px
+	+media-breakpoint-down(xs)
+		.navbar-nav
+			left: 54px
+			right: 0
+			width: auto
 .navbar-nav
 	>li
 		display: inline-block
@@ -391,9 +434,6 @@ p
 					position: absolute
 					bottom: 0
 					left: 0
-		+media-breakpoint-down(lg)
-			font-size: .8em
-
 	a
 		display: inline-block
 		vertical-align: middle
@@ -406,7 +446,39 @@ p
 			color: $text
 	.dropdawn-menu
 		min-width: 180px
-	
+		background: #fff
+	+media-breakpoint-down(lg)
+		>li	
+			font-size: .8em
+	+media-breakpoint-down(md)
+		display: none
+		>li
+			&,&:not(:last-child)
+				margin-right: 0
+				box-shadow: inset 0 0 10px rgba($accent, .3)
+			&.active
+				background: rgba($accent, .2)
+				>a:after
+					display: none
+		li
+			display: block
+			a
+				display: block
+		a
+			padding: 10px
+		.cover
+			position: absolute
+			right: 15px
+			top: 16px
+		.dropdown-menu
+			position: relative
+			height: 0
+			overflow: hidden
+			padding: 0
+		.dropdown
+			&:hover
+				.dropdown-menu
+					height: auto
 .dropdown
 	position: relative
 	a
@@ -447,7 +519,10 @@ p
 		padding: 5px 15px
 		&:hover
 			background: rgba($accent, .1)
-
+	+media-breakpoint-down(xs)
+		.dropdown-menu
+			a
+				padding: 5px 10px
 //SLIDER//
 .main-slider
 	position: relative
@@ -460,9 +535,6 @@ p
 		left: 0
 		top: 0
 		padding-top: 6%
-		.btn-lg
-			padding: 25px 30px
-			min-width: 360px
 	.description
 		font-size: 1.375em
 		opacity: .7
@@ -576,6 +648,7 @@ p
 			flex-wrap: wrap
 		.item
 			margin-bottom: 15px
+			max-width: 50%
 		&.door
 			.item
 				&:nth-child(even)
@@ -759,12 +832,24 @@ p
 			margin-bottom: 15px
 		p
 			font-size: .85em
+	+media-breakpoint-down(xs)
+		.flex
+			flex-direction: column
+		.user-icon
+			width: 100%
+			margin-bottom: 20px
+		.review
+			padding: 0
+			h5,.h5
+				min-height: auto
 
 .zoom-gallery
 	padding: 40px 25px 0
 	&.grid
 		grid-template-columns: repeat(auto-fit, minmax(350px, 1fr))
 		grid-gap: 50px
+	a
+		display: inline-block
 
 .contact-block
 	.h6
@@ -894,7 +979,9 @@ p
 			min-height: 240px
 .shema-wrap
 	position: relative
-	margin-bottom: 70px
+	margin-bottom: 30px
+	+ .description
+		margin-bottom: 70px
 	img
 		margin: 0 auto
 	.pointer
@@ -935,7 +1022,7 @@ p
 			top: 50%
 			margin-top: -20px
 		&:nth-of-type(3)
-			bottom: 50px
+			bottom: 60px
 			i
 				transform: rotate(15deg)
 	.right
@@ -953,31 +1040,37 @@ p
 				width: 60%
 		&:nth-of-type(2)
 			top: 50%
-			margin-top: -20px
+			margin-top: 8px
 	&.shema-balkon
+		.pointer
+			i
+				width: 50%
 		.left
 			margin-left: -510px
+			&:nth-of-type(1)
+				top: 60px
 			&:nth-of-type(2)
-				margin-top: -70px
+				margin-top: -30px
 			&:nth-of-type(3)
 				+media-breakpoint-down(md)
 					bottom: 65px
 				i
-					transform: rotate(-42deg)
+					transform: rotate(-20deg)
+					width: 70%
 			+media-breakpoint-down(md)
 				margin-left: -365px
 		.right
 			&:nth-of-type(1)
 				i
-					width: 72%
+					width: 20%
 			&:nth-of-type(2)
-				margin-top: -70px
 				i
-					transform: rotate(16deg)
-					width: 125%
+					transform: rotate(-25deg)
+					width: 80%
 					+media-breakpoint-down(md)
 						transform: rotate(13deg)
 						width: 140%
+
 	strong
 		display: block
 		font-size: 1.2em
@@ -1016,6 +1109,12 @@ p
 		.pointer
 			i
 				display: none
+		&.shema-balkon
+			.left
+				margin-left: 0
+			.right
+				&:nth-of-type(2)
+					margin-top: -30px
 .selection
 	.nav-tab
 		display: flex
@@ -1053,9 +1152,8 @@ p
 		border-radius: 0 0 10px 10px
 		position: relative
 	.tab-pane
-		padding: 60px 20px
+		padding: 50px 20px 0px
 	.specific
-		margin-bottom: 90px
 		ul
 			display: flex
 			flex-wrap: wrap
@@ -1081,8 +1179,7 @@ p
 			border-radius: 50%
 			transition: $trans3
 	.additional
-		padding-left: 40px
-		max-width: 50%
+		padding: 20px 40px
 		.title
 			font-size: 1.25em
 			font-weight: bold
@@ -1125,6 +1222,11 @@ p
 	label
 		&.checkbox
 			font-weight: bold
+		small
+			&:before 
+				content: '('
+			&:after
+				content: ')'
 	.disabled
 		pointer-events: none
 		opacity: .5
@@ -1146,6 +1248,20 @@ p
 					max-width: 25%
 			label
 				font-size: .6em
+	+media-breakpoint-down(xs)
+		.nav-tab
+			li
+				label
+					font-size: .75em
+					padding: 15px 2px
+		.specific
+			ul
+				li
+					max-width: 50%
+.result-calc
+	flex-direction: column
+	text-align: center
+	justify-content: center
 
 .map
 	height: 560px
@@ -1194,7 +1310,9 @@ p
 				&.email
 					&:before
 						background-position: -43px 0
-	
+	+media-breakpoint-down(xs)
+		.contact-block
+			margin-left: -156px
 .footer
 	padding: 25px 0
 	.copyright
@@ -1428,6 +1546,9 @@ p
 	+media-breakpoint-down(xs)	
 		&:before, &:after
 			display: none
+		.form-control
+			padding: 17px 10px
+
 .form-control
 	display: block
 	width: 100%
@@ -1651,6 +1772,46 @@ select
 			+transform(0, -50px)
 			opacity: 0
 
+.hamburger
+	display: none
+	padding: 8px 15px
+	cursor: pointer
+	position: absolute
+	&.active
+		.hamburger-inner
+			transform: rotate(45deg)
+			&:before
+				top: 0
+				opacity: 0
+			&:after
+				bottom: 0
+				transform: rotate(-90deg)
+.hamburger-box
+	position: relative
+	display: inline-block
+	width: 30px
+	height: 24px
+.hamburger-inner
+	&,&:before,&:after
+		position: absolute
+		width: 30px
+		height: 3px
+		transition: $trans3
+		border-radius: 3px
+		background: $text
+	top: 50%
+	display: block
+	margin-top: -2px
+	&:before,&:after
+		content: ''
+		display: block
+	&:before
+		top: -8px
+	&:after
+		bottom: -8px
++media-breakpoint-down(md)
+	.hamburger
+		display: inline-block
 +media-breakpoint-down(sm)
 	.button-call
 		//display: none
